@@ -2,6 +2,10 @@
 
 # A Brief Introduction to Functional Programming
 
+## Advantages
+
+## Disadvantages
+
 # Higher-order Functions
 
 ## Closures
