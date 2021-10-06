@@ -7,21 +7,29 @@ body {
 }
 
 .work {
+	--aspect : 1;
+	margin : 1em 1em;
 	display : inline-block;
-	width : 10em;
-	height : 10em;
+	height : 20em;
+	width : calc(var(--aspect) * 20em);
+	max-width : 50vw;
+	max-height : 50vw;
+	border-radius : 0.5em;
+	overflow : hidden;
 }
 
 .work div {
+	transition : all 0.5s;
 	width : 100%;
 	height : 100%;
-	background-color : var(--background-2);
+	background-color : var(--colour-light-2);
 	background-image : var(--img);
 	background-position : center;
 	background-size : cover;
+	--angle : 0deg;
 }
 
 .work:hover div,
 .work:focus div {
-	transform : scale(1.2);
+	transform : scale(1.2) rotate(var(--angle));
 }
