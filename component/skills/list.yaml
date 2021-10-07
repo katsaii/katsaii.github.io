@@ -1,0 +1,31 @@
+languages:
+ - Rust
+ - Python
+ - Ruby
+ - JavaScript
+ - "GameMaker Language"
+ - C
+ - Go
+ - Java
+ - Haskell
+ - "Visual Basic .NET"
+skills:
+ - "Mathematics and Theory"
+ - "Programming Language Design"
+ - "Compilers and Virtual Machines"
+ - "Network Programming"
+ - Research
+ - "Inverse Kinematics"
+ - "Skeletal Animation"
+ - "Graphics Programming"
+ - Optimisation
+ - "Artificial Intelligence"
+ - "Path Finding"
+ - "Physics Engines"
+ - "Tool Development"
+ - Art
+ - "Technical Art"
+ - "Source Control"
+ - "Computer Vision"
+ - "Game Development"
+ - "Web Development"
