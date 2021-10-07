@@ -207,7 +207,7 @@ button.unstyled {
 	padding : 50px 0px;
 }
 
-@media screen and (max-width : 11in) {
+@media screen and (max-width : 12in) {
 	:root {
 		--margin-left : 5%;
 	}
