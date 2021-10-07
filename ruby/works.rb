@@ -4,8 +4,11 @@
 def render_items(items)
     out = "<div class=\"flex\">"
     items.each do |x|
+        image = x["image"]
+        angle = x["angle"]
+        angle = 0 if angle == nil
         out << "<div class=\"centre\"><div class=\"work\">"
-        out << "<div style=\"--img : url('/image/avatar/7.png'); --angle : 10deg;\"></div>"
+        out << "<div style=\"--img : url('#{image}'); --angle : #{angle}deg;\"></div>"
         out << "</div></div>"
     end
     out + "\n</div>"
