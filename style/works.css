@@ -12,13 +12,20 @@ body {
 
 .work {
 	--scale : 10em;
+	--checker-blend : rgba(192, 192, 192, 0.75);
 	margin : 0.5em 0.5em;
 	display : inline-block;
 	height : var(--scale);
 	width : var(--scale);
 	max-width : 50vw;
 	max-height : 50vw;
-	background-color : var(--colour-light-2);
+	background-image :
+			/* checker pattern */
+			linear-gradient(to right, var(--checker-blend), var(--checker-blend)),
+			linear-gradient(to right, black 50%, white 50%),
+			linear-gradient(to bottom, black 50%, white 50%);
+	background-blend-mode : normal, difference, normal;
+	background-size : 2vh 2vh;
 	border-radius : 0.5em;
 	overflow : hidden;
 }
