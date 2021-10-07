@@ -6,14 +6,19 @@ body {
 	width : 6em;
 }
 
+.flex {
+	align-items : center;
+}
+
 .work {
-	--aspect : 1;
-	margin : 1em 1em;
+	--scale : 10em;
+	margin : 0.5em 0.5em;
 	display : inline-block;
-	height : 20em;
-	width : calc(var(--aspect) * 20em);
+	height : var(--scale);
+	width : var(--scale);
 	max-width : 50vw;
 	max-height : 50vw;
+	background-color : var(--colour-light-2);
 	border-radius : 0.5em;
 	overflow : hidden;
 }
@@ -22,7 +27,6 @@ body {
 	transition : all 0.5s;
 	width : 100%;
 	height : 100%;
-	background-color : var(--colour-light-2);
 	background-image : var(--img);
 	background-position : center;
 	background-size : cover;
