@@ -4,9 +4,9 @@
 def render_items(items)
     out = "<div class=\"flex\">"
     items.each do |x|
-        out << "<div class=\"record centre\"><code>#{x}</code></div>"
+        out << "\n<div class=\"record centre\"><code>#{x}</code></div>"
     end
-    out + "</div>"
+    out + "\n</div>"
 end
 
 skills_info = unmarshal_yaml(read("skills/list.yaml"))

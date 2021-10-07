@@ -13,32 +13,7 @@
 				<h1>Contact</h1>
 				<p>You can find me on any one of these platforms.</p>
 			</div>
-			<div class="flex">
-				<div class="contact centre">
-					<b>GitHub</b><br><a href="<%= $urls["github"] %>" target="_blank">/NuxiiGit</a>
-				</div>
-				<div class="contact centre">
-					<b>Twitter</b><br><a href="<%= $urls["twitter"] %>" target="_blank">@katsaii</a>
-				</div>
-				<div class="contact centre">
-					<b>Discord</b><br>katsaii#4528
-				</div>
-				<div class="contact centre">
-					<b>SoundCloud</b><br><a href="<%= $urls["soundcloud"] %>" target="_blank">/katsaii</a>
-				</div>
-				<div class="contact centre">
-					<b>Newgrounds</b><br><a href="<%= $urls["newgrounds"] %>" target="_blank">@Katsaii</a>
-				</div>
-				<div class="contact centre">
-					<b>DeviantArt</b><br><a href="<%= $urls["deviantart"] %>" target="_blank">/katxaii</a>
-				</div>
-				<div class="contact centre">
-					<b>Tumblr</b><br><a href="<%= $urls["tumblr"] %>" target="_blank">@katxaii</a>
-				</div>
-				<div class="contact centre">
-					<b>Email</b><br><a href="<%= $urls["email"] %>">katsaiinuxii@gmail.com</a>
-				</div>
-			</div>
+			<%= render_items(contact_info) %>
 			<div id="footer"></div>
 		</div>
 	</body>
