@@ -55,7 +55,7 @@ def render_music_items(items)
         mirrors = [] if mirrors == nil
         out << "<div class=\"centre\">"
         out << "<audio class=\"work-audio\" controls><source src=\"#{audio}\" type=\"audio/ogg\"></audio>"
-        out << "<div class=\"work-caption\">#{name} {"
+        out << "<div class=\"work-caption\">#{name}<br>{"
         mirrors.each_with_index do |mirror, i|
             if i != 0
                 out << ","

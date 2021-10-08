@@ -26,9 +26,23 @@ artwork:
    mirrors:
     - "https://twitter.com/katsaii/status/1284649475328421888"
 music:
- - name: Yeah1
- - name: Yeah2
- - name: Yeah3
- - name: Yeah4
- - name: Yeah5
- - name: Yeah6
+ - src: /audio/works/distorted-serenity.ogg
+   name: "Distorted Serenity"
+   mirrors:
+    - "https://soundcloud.com/katsaii/distorted-serenity"
+    - "https://www.newgrounds.com/audio/listen/952243"
+ - src: /audio/works/quickcore.ogg
+   name: "Quickcore"
+   mirrors:
+    - "https://soundcloud.com/katsaii/quickcore-arpcore"
+    - "https://www.newgrounds.com/audio/listen/952358"
+ - src: /audio/works/beware-of-dreams.ogg
+   name: "Beware of Dreams"
+   mirrors:
+    - "https://soundcloud.com/katsaii/16-bit-dreams"
+    - "https://www.newgrounds.com/audio/listen/952581"
+    - "https://rgm-sam.bandcamp.com/track/16-bitdreams"
+ - src: /audio/works/brainworm.ogg
+   name: "Brainworm"
+   mirrors:
+    - "https://soundcloud.com/katsaii/noiseinmyears"
