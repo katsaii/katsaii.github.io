@@ -6,6 +6,7 @@ def abbreviate(url)
     if url.include?("github") then "GH"
     elsif url.include?("twitter") then "Tw"
     elsif url.include?("soundcloud") then "SC"
+    elsif url.include?("bandcamp") then "Bc"
     elsif url.include?("newgrounds") then "Ng"
     elsif url.include?("deviantart") then "DA"
     elsif url.include?("tumblr") then "T"
