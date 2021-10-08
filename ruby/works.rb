@@ -8,7 +8,7 @@ def render_items(items)
         angle = x["angle"]
         angle = 0 if angle == nil
         out << "<div class=\"centre\"><div class=\"work\">"
-        out << "<div style=\"--img : url('#{image}'); --angle : #{angle}deg;\"></div>"
+        out << "<a href=\"#{image}\"><div style=\"--img : url('#{image}'); --angle : #{angle}deg;\"></div></a>"
         out << "</div></div>"
     end
     out + "\n</div>"
