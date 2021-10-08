@@ -5,6 +5,10 @@ def render_items(items)
     out = "<div class=\"flex\">"
     items.each do |x|
         image = x["image"]
+        thumb = x["thumb"]
+        thumb = image if thumb == nil
+        name = x["name"]
+        name = "Img" if name == nil
         mirrors = x["mirrors"]
         mirrors = [] if mirrors == nil
         mirrors << image
@@ -12,8 +16,8 @@ def render_items(items)
         angle = 0 if angle == nil
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
-        out << "<a href=\"#{image}\"><div style=\"--img : url('#{image}'); --angle : #{angle}deg;\"></div></a>"
-        out << "</div><div class=\"img-caption\">src ="
+        out << "<a href=\"#{image}\"><div style=\"--img : url('#{thumb}'); --angle : #{angle}deg;\"></div></a>"
+        out << "</div><div class=\"img-caption\">data #{name} ="
         mirrors.each_with_index do |mirror, i|
             if i != 0
                 out << " |"
