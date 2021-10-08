@@ -10,10 +10,15 @@ body {
 	align-items : center;
 }
 
+.flex > div {
+	margin : 0.5em 0.5em;
+}
+
 .work {
 	--scale : 10em;
 	--checker-blend : rgba(192, 192, 192, 0.75);
-	margin : 0.5em 0.5em;
+	margin : 0;
+	padding : 0;
 	display : inline-block;
 	height : var(--scale);
 	width : var(--scale);
@@ -43,4 +48,11 @@ body {
 .work:hover div,
 .work:focus div {
 	transform : scale(1.2) rotate(var(--angle));
+}
+
+.img-caption {
+	font-size : 0.75em;
+	font-family : var(--font-mono);
+	margin-top : 0;
+	padding-top : 0;
 }

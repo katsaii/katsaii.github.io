@@ -1,2 +1,18 @@
 - image: /image/avatar/7.png
   angle: 45
+- image: /image/avatar/7.png
+  angle: 45
+- image: /image/avatar/7.png
+  angle: 45
+  mirrors:
+   - other
+- image: /image/avatar/7.png
+  angle: 45
+- image: /image/avatar/7.png
+  angle: 45
+- image: /image/avatar/7.png
+  angle: 45
+- image: /image/avatar/7.png
+  angle: 45
+- image: /image/avatar/7.png
+  angle: 45
