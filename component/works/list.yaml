@@ -1,18 +1,5 @@
-- image: /image/avatar/7.png
-  angle: 45
-- image: /image/avatar/7.png
-  angle: 45
-- image: /image/avatar/7.png
-  angle: 45
+- image: /image/works/1.png
+  thumb: /image/works/1-thumb.png
+  name: Bunny
   mirrors:
-   - other
-- image: /image/avatar/7.png
-  angle: 45
-- image: /image/avatar/7.png
-  angle: 45
-- image: /image/avatar/7.png
-  angle: 45
-- image: /image/avatar/7.png
-  angle: 45
-- image: /image/avatar/7.png
-  angle: 45
+   - "https://twitter.com/katsaii/status/1284649475328421888"
