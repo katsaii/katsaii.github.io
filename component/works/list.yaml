@@ -1,3 +1,23 @@
+- image: /image/works/5.png
+  thumb: /image/works/5-thumb.png
+  name: Gamer
+  mirrors:
+   - "https://twitter.com/katsaii/status/1426247340948590594"
+- image: /image/works/4.png
+  thumb: /image/works/4-thumb.png
+  name: Marisa
+  mirrors:
+   - "https://twitter.com/katsaii/status/1412221294490357761"
+- image: /image/works/3.png
+  thumb: /image/works/3-thumb.png
+  name: Fire
+  mirrors:
+   - "https://twitter.com/katsaii/status/1361498319617478661"
+- image: /image/works/2.png
+  thumb: /image/works/2-thumb.png
+  name: Plank
+  mirrors:
+   - "https://twitter.com/katsaii/status/1348089428204527625"
 - image: /image/works/1.png
   thumb: /image/works/1-thumb.png
   name: Bunny

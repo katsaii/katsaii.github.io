@@ -1,9 +1,10 @@
+include Math
 
 ##
 # Renders these items inside of a CSS flexbox.
 def render_items(items)
     out = "<div class=\"flex\">"
-    items.each do |x|
+    items.each_with_index do |x, rad|
         image = x["image"]
         thumb = x["thumb"]
         thumb = image if thumb == nil
@@ -12,8 +13,7 @@ def render_items(items)
         mirrors = x["mirrors"]
         mirrors = [] if mirrors == nil
         mirrors << image
-        angle = x["angle"]
-        angle = 0 if angle == nil
+        angle = 10 * Math::sin(rad + 1.5)
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
         out << "<a href=\"#{image}\"><div style=\"--img : url('#{thumb}'); --angle : #{angle}deg;\"></div></a>"
@@ -22,7 +22,7 @@ def render_items(items)
             if i != 0
                 out << " |"
             end
-            out << " <a href=\"#{mirror}\">#{('A'.ord + i).chr}</a>"
+            out << " <a href=\"#{mirror}\" target=\"_blank\">#{('A'.ord + i).chr}</a>"
         end
         out << "</div></div>"
     end
