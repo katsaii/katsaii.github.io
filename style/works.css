@@ -14,6 +14,14 @@ body {
 	margin : 0.5em 0.5em;
 }
 
+.work-audio {
+	margin : 0;
+	padding : 0;
+	width : 20em;
+	height : 5em;
+	max-width : 75vw;
+}
+
 .work {
 	--scale : 10em;
 	--checker-blend : rgba(192, 192, 192, 0.75);
@@ -50,7 +58,7 @@ body {
 	transform : scale(1.2) rotate(var(--angle));
 }
 
-.img-caption {
+.work-caption {
 	font-size : 0.75em;
 	font-family : var(--font-mono);
 	margin-top : 0;
