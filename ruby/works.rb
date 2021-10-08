@@ -29,18 +29,16 @@ def render_items(items)
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
         out << "<a href=\"#{image}\"><div style=\"--img : url('#{thumb}'); --angle : #{angle}deg;\"></div></a>"
-        out << "</div><div class=\"img-caption\">#{name}"
+        out << "</div><div class=\"img-caption\">#{name}<br>{"
         mirrors.each_with_index do |mirror, i|
             if i != 0
-                out << " |"
-            else
-                out << " ="
+                out << ","
             end
             abbr = abbreviate(mirror)
             abbr = i if abbr == nil
             out << " <a href=\"#{mirror}\" target=\"_blank\">#{abbr}</a>"
         end
-        out << "</div></div>"
+        out << " }</div></div>"
     end
     out + "\n</div>"
 end
