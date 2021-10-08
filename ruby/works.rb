@@ -17,7 +17,7 @@ def render_items(items)
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
         out << "<a href=\"#{image}\"><div style=\"--img : url('#{thumb}'); --angle : #{angle}deg;\"></div></a>"
-        out << "</div><div class=\"img-caption\">data #{name} ="
+        out << "</div><div class=\"img-caption\">#{name} ="
         mirrors.each_with_index do |mirror, i|
             if i != 0
                 out << " |"
