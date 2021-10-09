@@ -1,20 +1,25 @@
 artwork:
- - src: gamer.png
-   thumb: gamer-thumb.png
-   name: Gamer
+ - src: fire.png
+   thumb: fire-thumb.png
+   name: Fire
    mirrors:
-    - "https://twitter.com/katsaii/status/1426247340948590594"
+    - "https://twitter.com/katsaii/status/1361498319617478661"
  - src: marisa.png
    thumb: marisa-thumb.png
    name: Marisa
    mirrors:
     - "https://twitter.com/katsaii/status/1412221294490357761"
     - "https://www.deviantart.com/katxaii/art/Marisa-Touhou-886682955"
- - src: fire.png
-   thumb: fire-thumb.png
-   name: Fire
+ - src: vaniela.png
+   thumb: vaniela-thumb.png
+   name: Vaniela
    mirrors:
-    - "https://twitter.com/katsaii/status/1361498319617478661"
+    - "https://twitter.com/katsaii/status/1419039755409444869"
+ - src: gamer.png
+   thumb: gamer-thumb.png
+   name: Gamer
+   mirrors:
+    - "https://twitter.com/katsaii/status/1426247340948590594"
  - src: plank.png
    thumb: plank-thumb.png
    name: Plank
@@ -25,6 +30,12 @@ artwork:
    name: Bunny
    mirrors:
     - "https://twitter.com/katsaii/status/1284649475328421888"
+ - src: compact.png
+   thumb: compact-thumb.png
+   name: Compact
+   mirrors:
+    - "https://twitter.com/katsaii/status/1287166508075024384"
+ - name: Starve
 music:
  - src: seaside-rave.ogg
    name: "Seaside Rave"

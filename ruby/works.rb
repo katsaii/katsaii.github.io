@@ -1,6 +1,19 @@
 include Math
 
 ##
+# Converts this identifier into kebab-case.
+def into_kebab(name)
+    name.downcase.gsub(/\s+/, "-")
+end
+
+##
+# Appends `-thumb` into the name of a file.
+def thumb_path(path)
+    head, tail = path.split(".", 2)
+    "#{head}-thumb.#{tail}"
+end
+
+##
 # Gets the abbreviated version of this url.
 def abbreviate(url)
     if url.include?("github") then "GH"
@@ -19,11 +32,12 @@ end
 def render_art_items(items)
     out = "<div class=\"flex\">"
     items.each_with_index do |x, rad|
-        image = x["src"]
-        thumb = x["thumb"]
-        thumb = image if thumb == nil
         name = x["name"]
         name = "Untitled" if name == nil
+        image = x["src"]
+        image = "#{into_kebab(name)}.png" if image == nil
+        thumb = x["thumb"]
+        thumb = thumb_path(image) if thumb == nil
         mirrors = x["mirrors"]
         mirrors = [] if mirrors == nil
         angle = 10 * Math::sin(rad + 1.5)
@@ -49,9 +63,10 @@ end
 def render_music_items(items)
     out = "<div class=\"flex\">"
     items.each do |x|
-        audio = x["src"]
         name = x["name"]
         name = "Untitled" if name == nil
+        audio = x["src"]
+        audio = "#{into_kebab(name)}.ogg" if audio == nil
         mirrors = x["mirrors"]
         mirrors = [] if mirrors == nil
         out << "<div class=\"centre\">"
