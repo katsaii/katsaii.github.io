@@ -13,6 +13,8 @@ artwork:
    mirrors:
     - "https://twitter.com/katsaii/status/1426247340948590594"
  - name: Them
+   mirrors:
+    - "https://twitter.com/katsaii/status/1397044704823455752"
  - name: Plank
    mirrors:
     - "https://twitter.com/katsaii/status/1348089428204527625"
@@ -22,14 +24,30 @@ artwork:
  - name: Compact
    mirrors:
     - "https://twitter.com/katsaii/status/1287166508075024384"
- - name: Witch
  - name: "Big Hat"
+   mirrors:
+    - "https://twitter.com/katsaii/status/1312190576964452352"
+ - name: Witch
+   mirrors:
+    - "https://twitter.com/katsaii/status/1307044813829701634"
  - name: Bweh
+   mirrors:
+    - "https://twitter.com/katsaii/status/1200802781667483653"
  - name: Shirt
+   mirrors:
+    - "https://twitter.com/katsaii/status/1305688036190101507"
  - name: Lounge
+   mirrors:
+    - "https://twitter.com/katsaii/status/1268318846936629261"
  - name: Question
+   mirrors:
+    - "https://twitter.com/katsaii/status/1216857415435653122"
  - name: Armed
+   mirrors:
+    - "https://twitter.com/katsaii/status/1147596352966352896"
  - name: Palia
+   mirrors:
+    - "https://twitter.com/katsaii/status/1149383271253520384"
  - name: Starve
 music:
  - name: "Seaside Rave"
