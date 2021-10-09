@@ -24,6 +24,7 @@ artwork:
  - name: Compact
    mirrors:
     - "https://twitter.com/katsaii/status/1287166508075024384"
+    - "https://www.newgrounds.com/art/view/katsaii/bweh"
  - name: "Big Hat"
    mirrors:
     - "https://twitter.com/katsaii/status/1312190576964452352"
@@ -36,18 +37,23 @@ artwork:
  - name: Shirt
    mirrors:
     - "https://twitter.com/katsaii/status/1305688036190101507"
+    - "https://www.newgrounds.com/art/view/katsaii/t-shirt"
  - name: Lounge
    mirrors:
     - "https://twitter.com/katsaii/status/1268318846936629261"
+    - "https://www.newgrounds.com/art/view/katsaii/lounge"
  - name: Question
    mirrors:
     - "https://twitter.com/katsaii/status/1216857415435653122"
+    - "https://www.newgrounds.com/art/view/katsaii/buns"
  - name: Armed
    mirrors:
     - "https://twitter.com/katsaii/status/1147596352966352896"
+    - "https://www.newgrounds.com/art/view/katsaii/kandel"
  - name: Palia
    mirrors:
     - "https://twitter.com/katsaii/status/1149383271253520384"
+    - "https://www.newgrounds.com/art/view/katsaii/palia"
  - name: Starve
 music:
  - name: "Seaside Rave"
