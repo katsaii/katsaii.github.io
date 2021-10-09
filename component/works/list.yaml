@@ -1,54 +1,56 @@
 artwork:
- - src: /image/works/gamer.png
-   thumb: /image/works/gamer-thumb.png
+ - src: gamer.png
+   thumb: gamer-thumb.png
    name: Gamer
    mirrors:
     - "https://twitter.com/katsaii/status/1426247340948590594"
- - src: /image/works/marisa.png
-   thumb: /image/works/marisa-thumb.png
+ - src: marisa.png
+   thumb: marisa-thumb.png
    name: Marisa
    mirrors:
     - "https://twitter.com/katsaii/status/1412221294490357761"
     - "https://www.deviantart.com/katxaii/art/Marisa-Touhou-886682955"
- - src: /image/works/fire.png
-   thumb: /image/works/fire-thumb.png
+ - src: fire.png
+   thumb: fire-thumb.png
    name: Fire
    mirrors:
     - "https://twitter.com/katsaii/status/1361498319617478661"
- - src: /image/works/plank.png
-   thumb: /image/works/plank-thumb.png
+ - src: plank.png
+   thumb: plank-thumb.png
    name: Plank
    mirrors:
     - "https://twitter.com/katsaii/status/1348089428204527625"
- - src: /image/works/bunny.png
-   thumb: /image/works/bunny-thumb.png
+ - src: bunny.png
+   thumb: bunny-thumb.png
    name: Bunny
    mirrors:
     - "https://twitter.com/katsaii/status/1284649475328421888"
 music:
- - src: /audio/works/seaside-rave.ogg
+ - src: seaside-rave.ogg
    name: "Seaside Rave"
- - src: /audio/works/distorted-serenity.ogg
+   mirrors:
+    - "https://soundcloud.com/katsaii/seaside-rave"
+ - src: distorted-serenity.ogg
    name: "Distorted Serenity"
    mirrors:
     - "https://soundcloud.com/katsaii/distorted-serenity"
     - "https://www.newgrounds.com/audio/listen/952243"
- - src: /audio/works/quickcore.ogg
+ - src: quickcore.ogg
    name: "Quickcore"
    mirrors:
     - "https://soundcloud.com/katsaii/quickcore-arpcore"
     - "https://www.newgrounds.com/audio/listen/952358"
- - src: /audio/works/beware-of-dreams.ogg
+ - src: beware-of-dreams.ogg
    name: "Beware of Dreams"
    mirrors:
     - "https://soundcloud.com/katsaii/16-bit-dreams"
     - "https://www.newgrounds.com/audio/listen/952581"
     - "https://rgm-sam.bandcamp.com/track/16-bitdreams"
- - src: /audio/works/lifetime.ogg
+ - src: lifetime.ogg
    name: "Lifetime"
    mirrors:
     - "https://soundcloud.com/katsaii/lifetime"
- - src: /audio/works/brainworm.ogg
+ - src: brainworm.ogg
    name: "Brainworm"
    mirrors:
     - "https://soundcloud.com/katsaii/noiseinmyears"

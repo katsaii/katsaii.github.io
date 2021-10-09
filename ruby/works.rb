@@ -29,7 +29,7 @@ def render_art_items(items)
         angle = 10 * Math::sin(rad + 1.5)
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
-        out << "<a href=\"#{image}\"><div style=\"--img : url('#{thumb}'); --angle : #{angle}deg;\"></div></a>"
+        out << "<a href=\"/image/works/#{image}\"><div style=\"--img : url('/image/works/#{thumb}'); --angle : #{angle}deg;\"></div></a>"
         out << "</div><div class=\"work-caption\">#{name}<br>{"
         mirrors.each_with_index do |mirror, i|
             if i != 0
@@ -55,7 +55,7 @@ def render_music_items(items)
         mirrors = x["mirrors"]
         mirrors = [] if mirrors == nil
         out << "<div class=\"centre\">"
-        out << "<audio class=\"work-audio\" controls><source src=\"#{audio}\" type=\"audio/ogg\"></audio>"
+        out << "<audio class=\"work-audio\" controls><source src=\"/audio/works/#{audio}\" type=\"audio/ogg\"></audio>"
         out << "<div class=\"work-caption\">#{name}<br>{"
         mirrors.each_with_index do |mirror, i|
             if i != 0
