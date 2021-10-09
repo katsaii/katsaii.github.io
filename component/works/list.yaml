@@ -1,67 +1,56 @@
 artwork:
- - src: fire.png
-   thumb: fire-thumb.png
-   name: Fire
+ - name: Fire
    mirrors:
     - "https://twitter.com/katsaii/status/1361498319617478661"
- - src: marisa.png
-   thumb: marisa-thumb.png
-   name: Marisa
+ - name: Marisa
    mirrors:
     - "https://twitter.com/katsaii/status/1412221294490357761"
     - "https://www.deviantart.com/katxaii/art/Marisa-Touhou-886682955"
- - src: vaniela.png
-   thumb: vaniela-thumb.png
-   name: Vaniela
+ - name: Vaniela
    mirrors:
     - "https://twitter.com/katsaii/status/1419039755409444869"
- - src: gamer.png
-   thumb: gamer-thumb.png
-   name: Gamer
+ - name: Gamer
    mirrors:
     - "https://twitter.com/katsaii/status/1426247340948590594"
- - src: plank.png
-   thumb: plank-thumb.png
-   name: Plank
+ - name: Them
+ - name: Plank
    mirrors:
     - "https://twitter.com/katsaii/status/1348089428204527625"
- - src: bunny.png
-   thumb: bunny-thumb.png
-   name: Bunny
+ - name: Bunny
    mirrors:
     - "https://twitter.com/katsaii/status/1284649475328421888"
- - src: compact.png
-   thumb: compact-thumb.png
-   name: Compact
+ - name: Compact
    mirrors:
     - "https://twitter.com/katsaii/status/1287166508075024384"
+ - name: Witch
+ - name: "Big Hat"
+ - name: Bweh
+ - name: Shirt
+ - name: Lounge
+ - name: Question
+ - name: Armed
+ - name: Palia
  - name: Starve
 music:
- - src: seaside-rave.ogg
-   name: "Seaside Rave"
+ - name: "Seaside Rave"
    mirrors:
     - "https://soundcloud.com/katsaii/seaside-rave"
- - src: distorted-serenity.ogg
-   name: "Distorted Serenity"
+ - name: "Distorted Serenity"
    mirrors:
     - "https://soundcloud.com/katsaii/distorted-serenity"
     - "https://www.newgrounds.com/audio/listen/952243"
- - src: quickcore.ogg
-   name: "Quickcore"
+ - name: "Quickcore"
    mirrors:
     - "https://soundcloud.com/katsaii/quickcore-arpcore"
     - "https://www.newgrounds.com/audio/listen/952358"
- - src: beware-of-dreams.ogg
-   name: "Beware of Dreams"
+ - name: "Beware of Dreams"
    mirrors:
     - "https://soundcloud.com/katsaii/16-bit-dreams"
     - "https://www.newgrounds.com/audio/listen/952581"
     - "https://rgm-sam.bandcamp.com/track/16-bitdreams"
- - src: lifetime.ogg
-   name: "Lifetime"
+ - name: "Lifetime"
    mirrors:
     - "https://soundcloud.com/katsaii/lifetime"
- - src: brainworm.ogg
-   name: "Brainworm"
+ - name: "Brainworm"
    mirrors:
     - "https://soundcloud.com/katsaii/noiseinmyears"
