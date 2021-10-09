@@ -27,6 +27,10 @@ def abbreviate(url)
     end
 end
 
+def phantom_text
+    "<span style=\"visibility : hidden;\">{ }</span>"
+end
+
 ##
 # Renders these artwork items inside of a CSS flexbox.
 def render_art_items(items)
@@ -44,16 +48,22 @@ def render_art_items(items)
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
         out << "<a href=\"/image/works/#{image}\"><div style=\"--img : url('/image/works/#{thumb}'); --angle : #{angle}deg;\"></div></a>"
-        out << "</div><div class=\"work-caption\">#{name}<br>{"
-        mirrors.each_with_index do |mirror, i|
-            if i != 0
-                out << ","
+        out << "</div><div class=\"work-caption\">#{name}<br>"
+        if mirrors.empty?
+            out << phantom_text
+        else
+            out << "{"
+            mirrors.each_with_index do |mirror, i|
+                if i != 0
+                    out << ","
+                end
+                abbr = abbreviate(mirror)
+                abbr = i if abbr == nil
+                out << " <a href=\"#{mirror}\" target=\"_blank\">#{abbr}</a>"
             end
-            abbr = abbreviate(mirror)
-            abbr = i if abbr == nil
-            out << " <a href=\"#{mirror}\" target=\"_blank\">#{abbr}</a>"
+            out << " }"
         end
-        out << " }</div></div>"
+        out << "</div></div>"
     end
     out + "\n</div>"
 end
@@ -71,16 +81,22 @@ def render_music_items(items)
         mirrors = [] if mirrors == nil
         out << "<div class=\"centre\">"
         out << "<audio class=\"work-audio\" controls><source src=\"/audio/works/#{audio}\" type=\"audio/ogg\"></audio>"
-        out << "<div class=\"work-caption\">#{name}<br>{"
-        mirrors.each_with_index do |mirror, i|
-            if i != 0
-                out << ","
+        out << "<div class=\"work-caption\">#{name}<br>"
+        if mirrors.empty?
+            out << phantom_text
+        else
+            out << "{"
+            mirrors.each_with_index do |mirror, i|
+                if i != 0
+                    out << ","
+                end
+                abbr = abbreviate(mirror)
+                abbr = i if abbr == nil
+                out << " <a href=\"#{mirror}\" target=\"_blank\">#{abbr}</a>"
             end
-            abbr = abbreviate(mirror)
-            abbr = i if abbr == nil
-            out << " <a href=\"#{mirror}\" target=\"_blank\">#{abbr}</a>"
+            out << " }"
         end
-        out << " }</div></div>"
+        out << "</div></div>"
     end
     out + "\n</div>"
 end
