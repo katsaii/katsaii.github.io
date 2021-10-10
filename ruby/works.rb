@@ -47,7 +47,7 @@ def render_art_items(items)
         angle = 10 * Math::sin(rad + 1.5)
         out << "<div class=\"centre\">"
         out << "<div class=\"work\">"
-        out << "<a href=\"/image/works/#{image}\"><div style=\"--img : url('/image/works/#{thumb}'); --angle : #{angle}deg;\"></div></a>"
+        out << "<a href=\"/image/works/#{image}\" target=\"_blank\"><div style=\"--img : url('/image/works/#{thumb}'); --angle : #{angle}deg;\"></div></a>"
         out << "</div><div class=\"work-caption\">#{name}<br>"
         if mirrors.empty?
             out << phantom_text
