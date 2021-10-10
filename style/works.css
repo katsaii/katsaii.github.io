@@ -6,10 +6,6 @@ body {
 	width : 6em;
 }
 
-.flex {
-	align-items : center;
-}
-
 .flex > div {
 	margin : 0.5em 0.5em;
 }

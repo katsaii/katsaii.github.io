@@ -402,10 +402,7 @@ table {
 	display : flex;
 	align-items : center;
 	flex-wrap : wrap;
-}
-
-.flex > div {
-	flex-grow : 1;
+	justify-content : space-evenly;
 }
 
 .centre {
