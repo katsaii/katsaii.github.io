@@ -33,7 +33,11 @@ body {
 	width : 20em;
 }
 
-.box {
-	width : 500px;
-	padding : 50px 10px;
+.box-a {
+	padding : 50px 5px;
+	width : 515px;
+}
+
+.box-b {
+	width : 400px;
 }
