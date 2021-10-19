@@ -31,9 +31,11 @@ artwork:
  - name: Witch
    mirrors:
     - "https://twitter.com/katsaii/status/1307044813829701634"
+ - name: Broom
  - name: Bweh
    mirrors:
     - "https://twitter.com/katsaii/status/1200802781667483653"
+ - name: Canon
  - name: CPU
    mirrors:
     - "https://twitter.com/katsaii/status/1159600956792811520"
@@ -57,6 +59,12 @@ artwork:
    mirrors:
     - "https://twitter.com/katsaii/status/1149383271253520384"
     - "https://www.newgrounds.com/art/view/katsaii/palia"
+ - name: Awkward
+ - name: Ghostly
+ - name: Walking
+ - name: Cold
+ - name: Wondrous
+ - name: Launcher
  - name: Starve
    mirrors:
     - "https://steamcommunity.com/sharedfiles/filedetails/?id=643895908"
