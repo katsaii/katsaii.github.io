@@ -34,6 +34,9 @@ artwork:
  - name: Bweh
    mirrors:
     - "https://twitter.com/katsaii/status/1200802781667483653"
+ - name: CPU
+   mirrors:
+    - "https://twitter.com/katsaii/status/1159600956792811520"
  - name: Shirt
    mirrors:
     - "https://twitter.com/katsaii/status/1305688036190101507"
