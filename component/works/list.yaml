@@ -32,10 +32,14 @@ artwork:
    mirrors:
     - "https://twitter.com/katsaii/status/1307044813829701634"
  - name: Broom
+   mirrors:
+    - "https://twitter.com/katsaii/status/1306382870634795009"
  - name: Bweh
    mirrors:
     - "https://twitter.com/katsaii/status/1200802781667483653"
  - name: Canon
+   mirrors:
+    - "https://twitter.com/katsaii/status/1309295178675630081"
  - name: CPU
    mirrors:
     - "https://twitter.com/katsaii/status/1159600956792811520"
@@ -60,10 +64,22 @@ artwork:
     - "https://twitter.com/katsaii/status/1149383271253520384"
     - "https://www.newgrounds.com/art/view/katsaii/palia"
  - name: Awkward
+   mirrors:
+    - "https://twitter.com/katsaii/status/1163171270994857986"
+    - "https://www.newgrounds.com/art/view/katsaii/dream"
  - name: Ghostly
+   mirrors:
+    - "https://twitter.com/katsaii/status/1235821268181504002"
  - name: Walking
+   mirrors:
+    - "https://twitter.com/katsaii/status/1190386219437510657"
  - name: Cold
+   mirrors:
+    - "https://twitter.com/katsaii/status/1178434299810521092"
+    - "https://www.newgrounds.com/art/view/katsaii/frozen"
  - name: Wondrous
+   mirrors:
+    - "https://twitter.com/katsaii/status/1397007065097416705"
  - name: Launcher
  - name: Starve
    mirrors:
