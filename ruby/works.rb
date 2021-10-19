@@ -23,6 +23,7 @@ def abbreviate(url)
     elsif url.include?("newgrounds") then "Ng"
     elsif url.include?("deviantart") then "DA"
     elsif url.include?("tumblr") then "T"
+    elsif url.include?("steamcommunity") then "St"
     else nil
     end
 end

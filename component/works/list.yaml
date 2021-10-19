@@ -58,6 +58,8 @@ artwork:
     - "https://twitter.com/katsaii/status/1149383271253520384"
     - "https://www.newgrounds.com/art/view/katsaii/palia"
  - name: Starve
+   mirrors:
+    - "https://steamcommunity.com/sharedfiles/filedetails/?id=643895908"
 music:
  - name: "Seaside Rave"
    mirrors:
