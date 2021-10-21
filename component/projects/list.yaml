@@ -7,7 +7,7 @@ projects:
    roles:
     - "Compiler Development"
  - name: "Witch Wanda"
-   website: https://github.com/NuxiiGit/witch-wanda
+   website: https://github.com/NuxiiGit/witch-wanda-gm48
    end: 2021
    languages:
     - "GameMaker Language"
