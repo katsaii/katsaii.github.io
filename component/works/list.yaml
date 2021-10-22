@@ -81,6 +81,9 @@ artwork:
    mirrors:
     - "https://twitter.com/katsaii/status/1397007065097416705"
  - name: Launcher
+   mirrors:
+    - "https://www.deviantart.com/katxaii/art/Launcher-895506451"
+    - "https://katxaii.tumblr.com/post/665697186683715584"
  - name: Starve
    mirrors:
     - "https://steamcommunity.com/sharedfiles/filedetails/?id=643895908"
