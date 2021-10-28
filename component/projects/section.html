@@ -19,6 +19,8 @@
 			<% end %>
 			<% if x.key? "roles" %>
 				:: <%= x["roles"].join(", ") %>
+			<% else %>
+				:: Development
 			<% end %>
 			<% if x.key? "languages" %>
 				<div class="right">
