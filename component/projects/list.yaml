@@ -17,9 +17,6 @@ projects:
    languages:
     - GameMaker Language
     - GLSL
-   roles:
-    - Technical Art
-    - Development
  - name: Catspeak
    website: https://github.com/NuxiiGit/catspeak-lang
    end: 2021
