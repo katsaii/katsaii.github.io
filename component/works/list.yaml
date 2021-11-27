@@ -15,15 +15,22 @@ artwork:
  - name: Them
    mirrors:
     - "https://twitter.com/katsaii/status/1397044704823455752"
+    - "https://katxaii.tumblr.com/post/667911390002069504/two-of-them"
+ - name: Persona
+   mirrors:
+    - "https://twitter.com/katsaii/status/1462574958840889344"
+    - "https://katxaii.tumblr.com/post/668875021400342528/some-doodles-with-mashmerlow"
  - name: Plank
    mirrors:
     - "https://twitter.com/katsaii/status/1348089428204527625"
+    - "https://katxaii.tumblr.com/post/668297566988959744/wtf"
  - name: Bunny
    mirrors:
     - "https://twitter.com/katsaii/status/1284649475328421888"
  - name: Compact
    mirrors:
     - "https://twitter.com/katsaii/status/1287166508075024384"
+    - "https://katxaii.tumblr.com/post/667663383444750336/gamer-fighting-pose"
     - "https://www.newgrounds.com/art/view/katsaii/bweh"
  - name: "Big Hat"
    mirrors:
@@ -40,9 +47,11 @@ artwork:
  - name: Canon
    mirrors:
     - "https://twitter.com/katsaii/status/1309295178675630081"
+    - "https://katxaii.tumblr.com/post/666989192105066496/self-portrait-or-something"
  - name: CPU
    mirrors:
     - "https://twitter.com/katsaii/status/1159600956792811520"
+    - "https://katxaii.tumblr.com/post/666636487347027968/little-portraits-i-did-a-while-ago-for-a-game-jam"
  - name: Shirt
    mirrors:
     - "https://twitter.com/katsaii/status/1305688036190101507"
@@ -54,6 +63,7 @@ artwork:
  - name: Question
    mirrors:
     - "https://twitter.com/katsaii/status/1216857415435653122"
+    - "https://katxaii.tumblr.com/post/668528209189601280/bunnies"
     - "https://www.newgrounds.com/art/view/katsaii/buns"
  - name: Armed
    mirrors:
@@ -73,13 +83,16 @@ artwork:
  - name: Walking
    mirrors:
     - "https://twitter.com/katsaii/status/1190386219437510657"
+    - "https://katxaii.tumblr.com/post/668954781496344576/strut"
  - name: Cold
    mirrors:
     - "https://twitter.com/katsaii/status/1178434299810521092"
+    - "https://katxaii.tumblr.com/post/667312209447288832/freezing-cold"
     - "https://www.newgrounds.com/art/view/katsaii/frozen"
  - name: Wondrous
    mirrors:
     - "https://twitter.com/katsaii/status/1397007065097416705"
+    - "https://katxaii.tumblr.com/post/666375553533837312/wondrous-world"
  - name: Launcher
    mirrors:
     - "https://www.deviantart.com/katxaii/art/Launcher-895506451"
@@ -87,6 +100,7 @@ artwork:
  - name: Starve
    mirrors:
     - "https://steamcommunity.com/sharedfiles/filedetails/?id=643895908"
+    - "https://katxaii.tumblr.com/post/665971496570716160/an-old-artwork-i-really-like"
 music:
  - name: "Seaside Rave"
    mirrors:
