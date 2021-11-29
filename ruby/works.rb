@@ -1,5 +1,16 @@
 include Math
 
+$links = [
+    { :key => "github", :id => "GH", :alias => "GitHub" },
+    { :key => "twitter", :id => "Tw", :alias => "Twitter" },
+    { :key => "soundcloud", :id => "SC", :alias => "SoundCloud" },
+    { :key => "bandcamp", :id => "Bc", :alias => "Bandcamp" },
+    { :key => "newgrounds", :id => "Ng", :alias => "Newgrounds" },
+    { :key => "deviantart", :id => "DA", :alias => "DeviantArt" },
+    { :key => "tumblr", :id => "T", :alias => "Tumblr" },
+    { :key => "steamcommunity", :id => "St", :alias => "Steam" }
+]
+
 ##
 # Converts this identifier into kebab-case.
 def into_kebab(name)
@@ -16,16 +27,12 @@ end
 ##
 # Gets the abbreviated version of this url.
 def abbreviate(url)
-    if url.include?("github") then "GH"
-    elsif url.include?("twitter") then "Tw"
-    elsif url.include?("soundcloud") then "SC"
-    elsif url.include?("bandcamp") then "Bc"
-    elsif url.include?("newgrounds") then "Ng"
-    elsif url.include?("deviantart") then "DA"
-    elsif url.include?("tumblr") then "T"
-    elsif url.include?("steamcommunity") then "St"
-    else nil
+    $links.each do |x|
+        if url.include?(x[:key])
+            return x[:id]
+        end
     end
+    nil
 end
 
 def phantom_text
