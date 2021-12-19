@@ -59,3 +59,22 @@ body {
 	margin-top : 0;
 	padding-top : 0;
 }
+
+#index > div {
+	padding-top : 15px;
+}
+
+#index > div * {
+	font-family : var(--font-mono);
+}
+
+#index span {
+	display : inline-block;
+	width : 100px;
+	text-align : left;
+}
+
+#index span:first-of-type {
+	width : 25px;
+	text-align : right;
+}
