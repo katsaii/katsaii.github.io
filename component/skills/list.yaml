@@ -3,29 +3,20 @@ languages:
  - Python
  - Ruby
  - JavaScript
- - "GameMaker Language"
  - C
+ - "C#"
  - Go
  - Java
  - Haskell
- - "Visual Basic .NET"
+ - GameMaker Language
+ - Visual Basic .NET
 skills:
- - "Mathematics and Theory"
- - "Programming Language Design"
- - "Compilers and Virtual Machines"
- - "Network Programming"
- - Research
- - "Inverse Kinematics"
- - "Skeletal Animation"
- - "Graphics Programming"
+ - Programming Language Design
+ - Compilers and Virtual Machines
+ - Online Multiplayer
+ - Inverse Kinematics
+ - Skeletal Animation
+ - Graphics Programming
  - Optimisation
- - "Artificial Intelligence"
- - "Path Finding"
- - "Physics Engines"
- - "Tool Development"
- - Art
- - "Technical Art"
- - "Source Control"
- - "Computer Vision"
- - "Game Development"
- - "Web Development"
+ - Artificial Intelligence
+ - Physics Engines
