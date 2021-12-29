@@ -17,9 +17,16 @@ body {
 	max-width : 75vw;
 }
 
+:root {
+	--checker-blend : rgba(200, 200, 200, 0.75);
+}
+
+:root.dark-mode {
+	--checker-blend : rgba(100, 100, 100, 0.85);
+}
+
 .work {
 	--scale : 10em;
-	--checker-blend : rgba(192, 192, 192, 0.75);
 	margin : 0;
 	padding : 0;
 	display : inline-block;
