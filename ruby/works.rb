@@ -88,7 +88,7 @@ def render_music_items(items)
         mirrors = x["mirrors"]
         mirrors = [] if mirrors == nil
         out << "<div class=\"centre\">"
-        out << "<audio class=\"work-audio\" controls><source src=\"/audio/works/#{audio}\" type=\"audio/ogg\"></audio>"
+        out << "<audio class=\"work-audio\" controls controlsList=\"nodownload noplaybackrate\"><source src=\"/audio/works/#{audio}\" type=\"audio/ogg\"></audio>"
         out << "<div class=\"work-caption\">#{name}<br>"
         if mirrors.empty?
             out << phantom_text
