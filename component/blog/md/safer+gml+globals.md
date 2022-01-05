@@ -34,3 +34,39 @@ var playerScore = player_data().score;
 ```
 
 ## Advantages over global variables
+
+more control over what gets assigned to your global variables
+
+```gml
+function player_data() {
+  static data = {
+    score : 0,
+    hiScore : 100,
+    setScore : function(newScore) {
+      score = newScore;
+      if (score > hiScore) {
+        hiScore = score;
+      }
+    },
+    getScore : function() {
+      return score;
+    },
+    getHiScore : function() {
+      return hiScore;
+    }
+  };
+  return {
+    setScore : data.setScore,
+    getScore : data.getScore,
+    getHiScore : data.getHiScore,
+  };
+}
+```
+
+read-only global state
+```gml
+function team_colours() {
+  static colours = [c_red, c_blue, c_green]; // this array can be updated externally, but never reassigned
+  return colours;
+}
+```
