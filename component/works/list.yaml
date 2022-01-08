@@ -28,20 +28,24 @@ artwork:
  - name: Bunny
    mirrors:
     - "https://twitter.com/katsaii/status/1284649475328421888"
+    - "https://katxaii.tumblr.com/post/672315414763732992/gremlin"
  - name: Compact
    mirrors:
     - "https://twitter.com/katsaii/status/1287166508075024384"
     - "https://katxaii.tumblr.com/post/667663383444750336/gamer-fighting-pose"
     - "https://www.newgrounds.com/art/view/katsaii/bweh"
- - name: "Big Hat"
+ - name: Big Hat
    mirrors:
     - "https://twitter.com/katsaii/status/1312190576964452352"
+    - "https://katxaii.tumblr.com/post/672122850525708288/even-more-witch"
  - name: Witch
    mirrors:
     - "https://twitter.com/katsaii/status/1307044813829701634"
+    - "https://katxaii.tumblr.com/post/671699873633124352/more-witch"
  - name: Broom
    mirrors:
     - "https://twitter.com/katsaii/status/1306382870634795009"
+    - "https://katxaii.tumblr.com/post/671446867143491584/posting-a-witch-on-christmas-deal-wid-it"
  - name: Bweh
    mirrors:
     - "https://twitter.com/katsaii/status/1200802781667483653"
@@ -62,6 +66,7 @@ artwork:
  - name: Lounge
    mirrors:
     - "https://twitter.com/katsaii/status/1268318846936629261"
+    - "https://katxaii.tumblr.com/post/671106963730464768/i-think-that-there-was-some-kinda-animal-that-did"
     - "https://www.newgrounds.com/art/view/katsaii/lounge"
  - name: Question
    mirrors:
