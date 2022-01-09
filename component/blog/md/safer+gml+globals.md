@@ -1,14 +1,17 @@
 # Preface
 
- - not intended to be preached as a best practice, just one method of managing global state that i fine useful
+This post is not intended to be preached as a "best practice." I just wanted to talk about one method of managing global state that I find useful. Just like with any problem, you should always consider different approaches based on your current priorities. `d (u _ u.)\`
 
 # The Problem with Using Global Variables
 
+ - many problesm with globals
+ - not gonna discuss that in this post
+ - gm is inheritely stateful
+
  - depends on code evaluation order
-
-## Solving the problem
-
+ - initialisation rooms
  - check for variable existence using variable_global_exists
+ - works fine, but can be brittle
 
 # Avoiding The Problem by using static variables
 
