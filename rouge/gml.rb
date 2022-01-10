@@ -60,10 +60,13 @@ class Gml < Rouge::RegexLexer
         rule %r/\d+\.\d+/, Num::Float
         rule %r/\.\d+/, Num::Float
         rule %r/\d+\./, Num::Float
+        rule %r/(0x|\$|#)[A-Fa-f0-9]+/, Num::Integer
+        rule %r/0b[01]+/, Num::Integer
         rule %r/\d+/, Num::Integer
         rule %r/"[^"\n]*"?/, Str
         rule %r/@'[^']*'/, Str
-        rule %r/#[A-Za-z]+/, Comment::Preproc
+        rule %r/@"[^"]*"/, Str
+        rule %r/^#[A-Za-z]+/, Comment::Preproc
         rule %r/[()\[\]{};,]/, Punctuation
         rule %r/[*\/!#@~&+%\\|^<>=?\-:.]/, Operator
         rule %r/([A-Za-z0-9_])*/ do |m|
