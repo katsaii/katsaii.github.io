@@ -44,8 +44,8 @@ Running this program again produces the desired result of `2.6`.
 So how is this useful? There is some power here that can be exploited. For example, let an array `p` of player positions be of the form `[x1, y1, x2, y2, ...]`. To index this array and retrieve the x and y position of some player with the id of `i`, the following code may be used:
 
 ```gmlext
-var pos_x = p[i * 2];
-var pos_y = p[i * 2 + 1];
+var posX = p[i * 2];
+var posY = p[i * 2 + 1];
 ```
 
 This code is clean, but macros may be used to help the code explain itself more clearly:
@@ -54,8 +54,8 @@ This code is clean, but macros may be used to help the code explain itself more 
 #macro X 2
 #macro Y 2 + 1
 
-var pos_x = p[i * X];
-var pos_y = p[i * Y];
+var posX = p[i * X];
+var posY = p[i * Y];
 ```
 
 The macros `X` and `Y` can be thought of as "units" that apply some sort of transformation to the value `i`. The benefit of doing this the same reason macros are useful in the first place: potential human error in the source code can be reduced by reducing code duplication.
@@ -132,9 +132,9 @@ One little known feature of macros is the ability to override built-in functions
 ```gmlext
 #macro show_debug_message overrides_show_debug_message
 
-function overrides_show_debug_message(_str) {
+function overrides_show_debug_message(str) {
   var file = file_text_open_append("game.log");
-  file_text_write_string(file, _str);
+  file_text_write_string(file, str);
   file_text_writeln(file);
   file_text_close(file);
 }
@@ -290,11 +290,11 @@ In the next sub-section, a `print` statement will be briefly discussed, includin
 The final syntax extension that will be covered is a `print` statement. This might sound a bit anticlimactic at first, but it really is the most technical macro of the three. The `print` statement builds off of the approaches shown in the previous two sub-sections, so this will only be brief. Secretly, the `print` statement assigns the to-be printed value into a hidden variable. The value of this variable is then output to the console, before `break` is executed to exit the loop:
 
 ```gmlext
-#macro print                           \
-    for (var print_value;; {           \
-      show_debug_message(print_value); \
-      break;                           \
-    }) print_value =
+#macro print                          \
+    for (var printValue;; {           \
+      show_debug_message(printValue); \
+      break;                          \
+    }) printValue =
 
 print "hello world";
 print 7.2 * 3 + 9;
@@ -325,10 +325,10 @@ However, this form cannot be easily translated into a macro, since `a` occurs be
 
 var a = true;
 var b = false;
-var a_imply_a = a implies a; // true  -> true  = true
-var a_imply_b = a implies b; // true  -> false = false
-var b_imply_b = b implies b; // false -> false = true
-var b_imply_a = b implies a; // false -> true  = true
+var aimplya = a implies a; // true  -> true  = true
+var aimplyb = a implies b; // true  -> false = false
+var bimplyb = b implies b; // false -> false = true
+var bimplya = b implies a; // false -> true  = true
 ```
 
 <br>
@@ -340,10 +340,10 @@ This same idea can be applied to bitwise operations by instead using `^` and `|`
 
 var a = 6; // 0110
 var b = 5; // 0101
-var a_bimply_a = a bimplies a; // 0110 .-> 0110 = 1111
-var a_bimply_b = a bimplies b; // 0110 .-> 0101 = 1101
-var b_bimply_b = b bimplies b; // 0101 .-> 0101 = 1111
-var b_bimply_a = b bimplies a; // 0101 .-> 0110 = 1110
+var abimplya = a bimplies a; // 0110 .-> 0110 = 1111
+var abimplyb = a bimplies b; // 0110 .-> 0101 = 1101
+var bbimplyb = b bimplies b; // 0101 .-> 0101 = 1111
+var bbimplya = b bimplies a; // 0101 .-> 0110 = 1110
 ```
 
 Since no variant of `true` exists in bitwise Boolean algebras, it is defined as the ones' complement (`~`) of `0`. This results in a similar implication operator that can be used with bitmasking.

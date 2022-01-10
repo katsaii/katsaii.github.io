@@ -12,11 +12,11 @@ One method to circumvent this would be to maintain a set of global variables; on
 global.windowMinWidth  = -1;
 global.windowMinHeight = -1;
 
-function set_min_size(_width, _height) {
-  window_set_min_width(_width);
-  window_set_min_height(_height);
-  global.windowMinWidth  = _width;
-  global.windowMinHeight = _height;
+function set_min_size(width, height) {
+  window_set_min_width(width);
+  window_set_min_height(height);
+  global.windowMinWidth  = width;
+  global.windowMinHeight = height;
 }
 ```
 
@@ -40,9 +40,9 @@ As shown in a [previous blog post](./gml+syntax+extensions.html), built-in funct
 ```gml
 #macro show_debug_message overrides_show_debug_message
 
-function overrides_show_debug_message(_str) {
+function overrides_show_debug_message(str) {
   var file = file_text_open_append("game.log");
-  file_text_write_string(file, _str);
+  file_text_write_string(file, str);
   file_text_writeln(file);
   file_text_close(file);
 }
@@ -56,10 +56,10 @@ The new method avoids these pitfalls by including an additional macro that acts 
 #macro BUILTIN_SHOW_DEBUG_MESSAGE show_debug_message
 #macro show_debug_message overrides_show_debug_message
 
-function overrides_show_debug_message(_str) {
-  BUILTIN_SHOW_DEBUG_MESSAGE(_str); // call the original implementation
+function overrides_show_debug_message(str) {
+  BUILTIN_SHOW_DEBUG_MESSAGE(str); // call the original implementation
   var file = file_text_open_append("game.log");
-  file_text_write_string(file, _str);
+  file_text_write_string(file, str);
   file_text_writeln(file);
   file_text_close(file);
 }
@@ -82,13 +82,13 @@ global.windowMinWidth  = -1;
 global.windowMinHeight = -1;
 
 // implement function overrides
-function overrides_window_set_min_width(_width) {
-  BUILTIN_WINDOW_SET_MIN_WIDTH(_width); // call the original implementation
-  global.windowMinWidth = _width;       // update internal record
+function overrides_window_set_min_width(width) {
+  BUILTIN_WINDOW_SET_MIN_WIDTH(width); // call the original implementation
+  global.windowMinWidth = width;       // update internal record
 }
-function overrides_window_set_min_height(_height) {
-  BUILTIN_WINDOW_SET_MIN_HEIGHT(_height);
-  global.windowMinHeight = _height;
+function overrides_window_set_min_height(height) {
+  BUILTIN_WINDOW_SET_MIN_HEIGHT(height);
+  global.windowMinHeight = height;
 }
 ```
 
