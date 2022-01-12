@@ -1,0 +1,41 @@
+<%= $header %>
+<html <%= $lang %>>
+	<head>
+		<%= $meta %>
+		<meta name="description" content="<%= info.key?("desc") ? info["desc"] : "A really cool blog post." %>">
+		<link rel="stylesheet" href="/style/post.css">
+		<title><%= info["title"] %></title>
+		<style>
+			/* hacky inline style, but I don't care .b =(O w O)= d. */
+			p:not(.justify) {
+				text-align : center;
+			}
+		</style>
+	</head>
+	<body>
+		<%= $homepage %>
+		<div id="index" class="sidebar">
+			<div class="centre">
+				<a class="date" href="/content/blog/post/<%= id -%>.html">&lt-Original Article</a>
+			</div>
+		</div>
+		<div id="content">
+			<div id="header">
+				<h1><%= info["title"] %></h1>
+				<h3>(Too Long; Don't caRe)</h3>
+			</div>
+			<div>
+				<p class="justify">Okay, I get it. You're a busy person! So, here is your information delivered <i>immediately</i> so you can get back to doing more important things.</p>
+				<hr>
+				<%= tldr %>
+			</div>
+			<div id="footer">
+				<div class="centre">
+					<b>Enjoy your extra time!</b>
+					<br>
+					<code>/(,u w u) o</code>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

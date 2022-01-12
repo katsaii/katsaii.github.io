@@ -1,4 +1,5 @@
 $blog_post_layout = read("blog/post.html")
+$blog_tldr_layout = read("blog/post-tldr.html")
 
 ##
 # Renders a markdown page.
@@ -91,9 +92,13 @@ posts.each do |info|
     key = info.key?("short-title") ? "short-title" : "title"
     id = convert_id(info[key])
     page = read("blog/md/#{id}.md")
+    tldr = read_or_nil("blog/md/tldr/#{id}.md")
+    tldr = markup(tldr) if tldr != nil
     content = markup(page)
     index = markup(page, index=true)
     vars = binding
-    post = template($blog_post_layout, vars)
-    write("blog/post/#{id}.html", post)
+    write("blog/post/#{id}.html", template($blog_post_layout, vars))
+    if tldr != nil
+        write("blog/tldr/#{id}.html", template($blog_tldr_layout, vars))
+    end
 end

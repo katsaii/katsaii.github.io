@@ -9,16 +9,39 @@ load "rouge/catspeak.rb"
 load "rouge/katscript.rb"
 
 ##
-# Helper function for reading files at this location.
-def read(path)
+# Helper function for checking if a file exists and reading it, otherwise returning `nil`
+def read_or_nil(path)
     content = ""
     abspath = "./component/" + path
     if File.file?(abspath)
-        content = File.read(abspath, mode: "rb", encoding: "utf-8")
+        File.read(abspath, mode: "rb", encoding: "utf-8")
     else
+        nil
+    end
+end
+
+##
+# Helper function for reading files at this location.
+def read(path)
+    content = read_or_nil(path)
+    if content == nil
         puts "file does not exist " + abspath
+        content = ""
     end
     content
+end
+
+##
+# Helper function for simply writing a string to a file.
+def write(path, page)
+    abspath = "./content/" + path
+    dir = File.dirname(abspath)
+    unless File.directory?(dir)
+        puts "creating path " + dir
+        FileUtils.mkdir_p(dir)
+    end
+    File.write(abspath, page)
+    abspath
 end
 
 ##
@@ -43,19 +66,6 @@ def figure(content, desc: "", ref: nil, width: :auto, height: :auto, type: :imag
         else "[invalid figure]"
     end
     "<div class=\"inline figure\">#{out}#{caption(desc: desc, ref: ref, newline: true)}</div>"
-end
-
-##
-# Helper function for simply writing a string to a file.
-def write(path, page)
-    abspath = "./content/" + path
-    dir = File.dirname(abspath)
-    unless File.directory?(dir)
-        puts "creating path " + dir
-        FileUtils.mkdir_p(dir)
-    end
-    File.write(abspath, page)
-    abspath
 end
 
 ##

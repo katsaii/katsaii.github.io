@@ -9,7 +9,12 @@
 	<body>
 		<%= $homepage %>
 		<div id="index" class="sidebar">
-			<b>Contents</b>
+			<div>
+				<b>Contents</b>
+				<% if tldr != nil %>
+					<i>(<a href="/content/blog/tldr/<%= id -%>.html">TL;DR</a>)</i>
+				<% end %>
+			</div>
 			<div class="h1"><a href="#"><%= info["title"] %></a></div>
 			<% index.each do |x| %>
 				<div class="<%= header_tag_md_to_html(x[0]) %>"><b>NΞ</b> <a href="#<%= convert_id(x[1]) -%>"><%= x[1] %></a></div>
