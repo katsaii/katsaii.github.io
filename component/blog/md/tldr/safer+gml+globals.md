@@ -19,9 +19,11 @@ function player_data() {
 }
 ```
 
-...and then get/set these global values like:
+...and then get/set these global values like...
 
 ```gml
 player_data().age += 1;
 player_data().name = string(player_data().score) + "-Volt";
 ```
+
+...because it guarantees that your data will be initialised before it's accessed.
