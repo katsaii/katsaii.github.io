@@ -68,12 +68,20 @@ class Gml < Rouge::RegexLexer
         rule %r/@"[^"]*"/, Str
         rule %r/^#[A-Za-z]+/, Comment::Preproc
         rule %r/[()\[\]{};,]/, Punctuation
-        rule %r/[*\/!#@~&+%\\|^<>=?\-:.]/, Operator
+        rule %r/[*\/!#@~&+%\\|^<>=?\-:.]/, Name::Variable
+        rule %r/[A-Za-z0-9_]+(?=\()/ do |m|
+            chunk = m[0]
+            if keyword_reserved.include?(chunk)
+                token Keyword
+            else
+                token Name::Builtin
+            end
+        end
         rule %r/([A-Za-z0-9_])*/ do |m|
             chunk = m[0]
-            if builtins.include?(chunk)
-                token Name::Builtin
-            elsif keyword_reserved.include?(chunk)
+            #if builtins.include?(chunk)
+            #    token Name::Builtin
+            if keyword_reserved.include?(chunk)
                 token Keyword
             elsif keyword_constant.include?(chunk)
                 token Keyword::Constant
