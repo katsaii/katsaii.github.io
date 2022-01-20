@@ -471,7 +471,6 @@ input[type='checkbox'] + label {
 
 .err,
 .k,
-.o,
 .gh,
 .gs,
 .gu,
@@ -485,7 +484,6 @@ input[type='checkbox'] + label {
 .nl,
 .nn,
 .nt,
-.ow,
 .vc {
 	font-weight : bold;
 }
@@ -503,7 +501,6 @@ input[type='checkbox'] + label {
 	font-style : italic;
 }
 
-.k,
 .o,
 .gi,
 .go,
@@ -529,6 +526,11 @@ input[type='checkbox'] + label {
 	color : var(--foreground);
 }
 
+.nv {
+	/* variable names */
+	opacity : 0.75;
+}
+
 .m,
 .s,
 .no,
@@ -550,14 +552,19 @@ input[type='checkbox'] + label {
 .dl,
 .kc {
 	/* constants and values */
-	color : var(--colour-accent);
+	color : #6f8cb5;
 }
 
 .nb,
 .nd,
 .bp {
 	/* built-in functions and variables */
-	color : var(--colour-accent-gold);
+	color : #dd7b3b;
+}
+
+.k {
+	/* keywords */
+	color : #b99768;
 }
 
 .na,
@@ -570,7 +577,7 @@ input[type='checkbox'] + label {
 .vc,
 .vm {
 	/* any kind of special identifier, types and primitive types */
-	color : var(--colour-accent-strawberry);
+	color : #dd3b69;
 }
 
 .c,
@@ -580,7 +587,7 @@ input[type='checkbox'] + label {
 .cs,
 .w {
 	/* ignored code */
-	color : grey;
+	color : #9c7c9f;
 }
 
 .err,
@@ -589,5 +596,5 @@ input[type='checkbox'] + label {
 .gt {
 	/* error code */
 	color : var(--background-2);
-	background : red;
+	background : rgb(255, 0, 0, 0.5);
 }

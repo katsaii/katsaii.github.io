@@ -4,7 +4,7 @@ This post is not intended to be preached as a "best practice." I just wanted to 
 
 # The Problem with Using Global Variables
 
-Okay! There are actually many problems with using global variables, some of which are useful to look out for. However, I'm not concerned with discussing those problems within this post. Instead, I want to discuss the situations where some value *really needs to be global*. But--if you're just itching to know--you can read all about some common pitfalls in this [WikiWikiWeb article](https://wiki.c2.com/?GlobalVariablesAreBad)[^wiki-glob].
+Okay... There are actually many problems with using global variables, some of which are useful to look out for. However, I'm not concerned with discussing those problems within this post. Instead, I want to discuss the situations where some value *really needs to be global*. (But if you're just itching to know, you can read all about some common pitfalls in this [WikiWikiWeb article](https://wiki.c2.com/?GlobalVariablesAreBad)[^wiki-glob].)
 
 So what is the problem? In GML, global variables are only defined if and when the program reaches a point where a value needs to be assigned to a global variable with that name. So, if your global variable definitions are hidden away inside some script or object that the program never reaches, then those global variables will never exist. For example, in the following code the global variable `name` gets defined before `colour`, and the global variable `hidden` is never defined:
 ```gml

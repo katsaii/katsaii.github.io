@@ -68,7 +68,7 @@ class Gml < Rouge::RegexLexer
         rule %r/@"[^"]*"/, Str
         rule %r/^#[A-Za-z]+/, Comment::Preproc
         rule %r/[()\[\]{};,]/, Punctuation
-        rule %r/[*\/!#@~&+%\\|^<>=?\-:.]/, Name::Variable
+        rule %r/[*\/!#@~&+%\\|^<>=?\-:.]/, Operator
         rule %r/[A-Za-z0-9_]+(?=\()/ do |m|
             chunk = m[0]
             if keyword_reserved.include?(chunk)
