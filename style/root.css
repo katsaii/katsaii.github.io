@@ -473,25 +473,25 @@ input[type='checkbox'] + label {
 	background : rgb(255, 0, 0, 0.5);
 }
 
+.gr, /* Generic.Error */
+.gt  /* Generic.Traceback */ {
+	/* an error in the language */
+	border : 1px dotted #FF0000;
+}
+
 .c,  /* Comment */
 .c1, /* Comment.Single */
 .cm, /* Comment.Multiline */
 .cs, /* Comment.Special */
 .w   /* Text.Whitespace */ {
 	/* any kind of normal comment */
-	color : #408090;
+	color : #080;
 	font-style : italic;
 }
 
 .cp /* Comment.Preproc */ {
 	/* pre-processor macros */
-	color : #007020;
-}
-
-.gr, /* Generic.Error */
-.gt  /* Generic.Traceback */ {
-	/* an error in the language */
-	border : 1px dotted #FF0000;
+	color : #705091;
 }
 
 .ge /* Generic.Emph */ {
@@ -541,18 +541,18 @@ input[type='checkbox'] + label {
 .kr, /* Keyword.Reserved */
 .bp  /* Name.Builtin.Pseudo */ {
 	/* actual keywords */
-	color : #007020;
+	color : #34347e;
 	font-weight : bold;
 }
 
 .kt /* Keyword.Type */ {
 	/* primitive data types */
-	color : #902000;
+	color : #0078aa;
 }
 
 .nb /* Name.Builtin */ {
 	/* built-in function */
-	color : #007020;
+	color : #d54a07;
 }
 
 .na, /* Name.Attribute */
@@ -569,7 +569,7 @@ input[type='checkbox'] + label {
 
 .nf /* Name.Function */ {
 	/* function call */
-	color : #06287e;
+	color : #808;
 }
 
 .nl, /* Name.Label */
@@ -583,19 +583,27 @@ input[type='checkbox'] + label {
 .vc, /* Name.Variable.Class */
 .vg, /* Name.Variable.Global */
 .vi  /* Name.Variable.Instance */ {
-	color : #bb60d5;
+	/* user variables */
+	color : var(--foreground);
+	opacity : 0.8;
 }
 
+.vm /* Name.Variable.Magic */ {
+	/* macro names */
+	color : #ff2558;
+}
+
+.p, /* Punctuation */
 .o, /* Operator */
 .ow /* Operator.Word */ {
 	/* operators */
-	color : #007020;
+	color : var(--foreground);
 }
 
 .kc, /* Keyword.Constant */
 .no  /* Name.Constant */ {
 	/* literals */
-	color : #007020;
+	color : #5151cb;
 }
 
 .m,  /* Literal.Number */
@@ -606,7 +614,7 @@ input[type='checkbox'] + label {
 .mi, /* Literal.Number.Integer */
 .il  /* Literal.Number.Integer.Long */ {
 	/* numeric literals */
-	color : #208050;
+	color : #fa3232;
 }
 
 .s,  /* Literal.String */
@@ -617,24 +625,46 @@ input[type='checkbox'] + label {
 .sr, /* Literal.String.Regex */
 .s1  /* Literal.String.Single */ {
 	/* string literals */
-	color : #4070a0;
+	color : #b91010;
 }
 
 .sd, /* Literal.String.Doc */
 .sh  /* Literal.String.Heredoc */ {
 	/* documentation strings */
-	color : #4070a0;
+	color : #00f;
 	font-style : italic;
 }
 
 .se, /* Literal.String.Escape */
 .si  /* Literal.String.Interpol */ {
 	/* escape sequences and template literals */
-	color : #4070a0;
-	font-weight : bold;
+	color : #5151cb;
 }
 
 .ss /* Literal.String.Symbol */ {
 	/* Ruby symbols */
-	color : #517918;
+	color : #fa3232;
+}
+
+/*
+ * DARK MODE
+ */
+
+:root.dark-mode .nv, /* Name.Variable */
+:root.dark-mode .vc, /* Name.Variable.Class */
+:root.dark-mode .vg, /* Name.Variable.Global */
+:root.dark-mode .vi  /* Name.Variable.Instance */ {
+	/* user variables */
+	opacity : 0.65;
+}
+
+:root.dark-mode .k,  /* Keyword */
+:root.dark-mode .kd, /* Keyword.Declaration */
+:root.dark-mode .kn, /* Keyword.Namespace */
+:root.dark-mode .kp, /* Keyword.Pseudo */
+:root.dark-mode .kr, /* Keyword.Reserved */
+:root.dark-mode .bp  /* Name.Builtin.Pseudo */ {
+	/* actual keywords */
+	color : #0FF;
+	font-weight : bold;
 }
