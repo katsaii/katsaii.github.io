@@ -463,138 +463,178 @@ input[type='checkbox'] + label {
 	max-height : 100%;
 }
 
-/* highlighting */
+/*
+ * HIGHLIGHTING
+ */
 
-.hll {
-	background-color : var(--background-2);
+.err /* Error */ {
+	/* an actual error in the lexer */
+	color : var(--background-2);
+	background : rgb(255, 0, 0, 0.5);
 }
 
-.err,
-.k,
-.gh,
-.gs,
-.gu,
-.kd,
-.kn,
-.kp,
-.kr,
-.nc,
-.nd,
-.ne,
-.nl,
-.nn,
-.nt,
-.vc {
-	font-weight : bold;
-}
-
-.gh {
-	text-decoration : underline;
-}
-
-.c
-.cm,
-.cp,
-.c1,
-.cs,
-.ge {
+.c,  /* Comment */
+.c1, /* Comment.Single */
+.cm, /* Comment.Multiline */
+.cs, /* Comment.Special */
+.w   /* Text.Whitespace */ {
+	/* any kind of normal comment */
+	color : #408090;
 	font-style : italic;
 }
 
-.o,
-.gi,
-.go,
-.gp,
-.kd,
-.kn,
-.kp,
-.kr,
-.kt,
-.nl,
-.nn,
-.nv,
-.ow,
-.w,
-.sh,
-.vg,
-.vi,
-.vm,
-.p,
-.nf,
-.nx {
-	/* boring tokens, such as variable names */
-	color : var(--foreground);
+.cp /* Comment.Preproc */ {
+	/* pre-processor macros */
+	color : #007020;
 }
 
-.nv {
-	/* variable names */
-	opacity : 0.75;
+.gr, /* Generic.Error */
+.gt  /* Generic.Traceback */ {
+	/* an error in the language */
+	border : 1px dotted #FF0000;
 }
 
-.m,
-.s,
-.no,
-.mf,
-.mh,
-.mi,
-.mo,
-.sb,
-.sc,
-.sd,
-.s2,
-.si,
-.sx,
-.sr,
-.s1,
-.ss,
-.sh,
-.il,
-.dl,
-.kc {
-	/* constants and values */
-	color : #6f8cb5;
+.ge /* Generic.Emph */ {
+	/* markdown emphasis */
+	font-style: italic;
 }
 
-.nb,
-.nd,
-.bp {
-	/* built-in functions and variables */
-	color : #dd7b3b;
+.gs /* Generic.Strong */ {
+	/* markdown bold */
+	font-weight: bold;
 }
 
-.k {
-	/* keywords */
-	color : #b99768;
+.gh /* Generic.Heading */ {
+	/* markdown heading */
+	color : #000080;
+	font-weight : bold;
+	text-decoration : underline;
 }
 
-.na,
-.nt,
-.ni,
-.ne,
-.nc,
-.se,
-.kt,
-.vc,
-.vm {
-	/* any kind of special identifier, types and primitive types */
-	color : #dd3b69;
+.gu /* Generic.Subheading */ {
+	/* markdown subheading */
+	color: #800080;
+	font-weight: bold;
 }
 
-.c,
-.cm,
-.cp,
-.c1,
-.cs,
-.w {
-	/* ignored code */
-	color : #9c7c9f;
+.gi /* Generic.Inserted */ {
+	/* diff addition */
+	color : #00A000;
 }
 
-.err,
-.gd,
-.gr,
-.gt {
-	/* error code */
-	color : var(--background-2);
-	background : rgb(255, 0, 0, 0.5);
+.gd /* Generic.Deleted */ {
+	/* diff deletion */
+	color : #A00000;
+}
+
+.go, /* Generic.Output */
+.gp  /* Generic.Prompt */ {
+	/* no idea! */
+	color : #c65d09;
+	font-weight : bold;
+}
+
+.k,  /* Keyword */
+.kd, /* Keyword.Declaration */
+.kn, /* Keyword.Namespace */
+.kp, /* Keyword.Pseudo */
+.kr, /* Keyword.Reserved */
+.bp  /* Name.Builtin.Pseudo */ {
+	/* actual keywords */
+	color : #007020;
+	font-weight : bold;
+}
+
+.kt /* Keyword.Type */ {
+	/* primitive data types */
+	color : #902000;
+}
+
+.nb /* Name.Builtin */ {
+	/* built-in function */
+	color : #007020;
+}
+
+.na, /* Name.Attribute */
+.nc, /* Name.Class */
+.nd, /* Name.Decorator */
+.ni, /* Name.Entity */
+.ne, /* Name.Exception */
+.nn, /* Name.Namespace */
+{
+	/* types and other special keywords */
+	color : #555555;
+	font-weight : bold;
+}
+
+.nf /* Name.Function */ {
+	/* function call */
+	color : #06287e;
+}
+
+.nl, /* Name.Label */
+.nt  /* Name.Tag */ {
+	/* tags */
+	color : #002070;
+	font-weight : bold;
+}
+
+.nv, /* Name.Variable */
+.vc, /* Name.Variable.Class */
+.vg, /* Name.Variable.Global */
+.vi  /* Name.Variable.Instance */ {
+	color : #bb60d5;
+}
+
+.o, /* Operator */
+.ow /* Operator.Word */ {
+	/* operators */
+	color : #007020;
+}
+
+.kc, /* Keyword.Constant */
+.no  /* Name.Constant */ {
+	/* literals */
+	color : #007020;
+}
+
+.m,  /* Literal.Number */
+.mb, /* Literal.Number.Bin */
+.mh, /* Literal.Number.Hex */
+.mo, /* Literal.Number.Oct */
+.mf, /* Literal.Number.Float */
+.mi, /* Literal.Number.Integer */
+.il  /* Literal.Number.Integer.Long */ {
+	/* numeric literals */
+	color : #208050;
+}
+
+.s,  /* Literal.String */
+.sb, /* Literal.String.Backtick */
+.sc, /* Literal.String.Char */
+.s2, /* Literal.String.Double */
+.sx, /* Literal.String.Other */
+.sr, /* Literal.String.Regex */
+.s1  /* Literal.String.Single */ {
+	/* string literals */
+	color : #4070a0;
+}
+
+.sd, /* Literal.String.Doc */
+.sh  /* Literal.String.Heredoc */ {
+	/* documentation strings */
+	color : #4070a0;
+	font-style : italic;
+}
+
+.se, /* Literal.String.Escape */
+.si  /* Literal.String.Interpol */ {
+	/* escape sequences and template literals */
+	color : #4070a0;
+	font-weight : bold;
+}
+
+.ss /* Literal.String.Symbol */ {
+	/* Ruby symbols */
+	color : #517918;
 }
