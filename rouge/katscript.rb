@@ -20,7 +20,7 @@ class KatScript < Rouge::RegexLexer
         elsif keyword_constant.include?(chunk)
             token Keyword::Constant
         elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
-            token Keyword::Type
+            token Name::Class
         else
             token default
         end

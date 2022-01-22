@@ -563,8 +563,7 @@ input[type='checkbox'] + label {
 .ne, /* Name.Exception */
 .nn  /* Name.Namespace */ {
 	/* types and other special keywords */
-	color : #555555;
-	font-weight : bold;
+	color : #7b7c26;
 }
 
 .nf /* Name.Function */ {
@@ -725,8 +724,7 @@ input[type='checkbox'] + label {
 :root.dark-mode .ne, /* Name.Exception */
 :root.dark-mode .nn  /* Name.Namespace */ {
 	/* types and other special keywords */
-	color : #555555;
-	font-weight : bold;
+	color : #a78c0a;
 }
 
 :root.dark-mode .nf /* Name.Function */ {

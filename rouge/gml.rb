@@ -65,7 +65,7 @@ class Gml < Rouge::RegexLexer
         elsif chunk.match?(/^[A-Z0-9_]*$/)
             token Name::Variable::Magic
         elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
-            token Keyword::Type
+            token Name::Class
         else
             token default
         end
