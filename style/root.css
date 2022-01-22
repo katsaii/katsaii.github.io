@@ -483,6 +483,7 @@ input[type='checkbox'] + label {
 .c1, /* Comment.Single */
 .cm, /* Comment.Multiline */
 .cs, /* Comment.Special */
+.sd, /* Literal.String.Doc */
 .w   /* Text.Whitespace */ {
 	/* any kind of normal comment */
 	color : #080;
@@ -560,8 +561,7 @@ input[type='checkbox'] + label {
 .nd, /* Name.Decorator */
 .ni, /* Name.Entity */
 .ne, /* Name.Exception */
-.nn, /* Name.Namespace */
-{
+.nn  /* Name.Namespace */ {
 	/* types and other special keywords */
 	color : #555555;
 	font-weight : bold;
@@ -579,6 +579,7 @@ input[type='checkbox'] + label {
 	font-weight : bold;
 }
 
+.n, /* Name */
 .nv, /* Name.Variable */
 .vc, /* Name.Variable.Class */
 .vg, /* Name.Variable.Global */
@@ -623,16 +624,11 @@ input[type='checkbox'] + label {
 .s2, /* Literal.String.Double */
 .sx, /* Literal.String.Other */
 .sr, /* Literal.String.Regex */
-.s1  /* Literal.String.Single */ {
+.s1, /* Literal.String.Single */
+.sh, /* Literal.String.Heredoc */
+.ss  /* Literal.String.Symbol */ {
 	/* string literals */
 	color : #b91010;
-}
-
-.sd, /* Literal.String.Doc */
-.sh  /* Literal.String.Heredoc */ {
-	/* documentation strings */
-	color : #080;
-	font-style : italic;
 }
 
 .se, /* Literal.String.Escape */
@@ -641,21 +637,64 @@ input[type='checkbox'] + label {
 	color : #5151cb;
 }
 
-.ss /* Literal.String.Symbol */ {
-	/* Ruby symbols */
-	color : #b91010;
-}
-
 /*
  * DARK MODE
  */
 
-:root.dark-mode .nv, /* Name.Variable */
-:root.dark-mode .vc, /* Name.Variable.Class */
-:root.dark-mode .vg, /* Name.Variable.Global */
-:root.dark-mode .vi  /* Name.Variable.Instance */ {
-	/* user variables */
-	opacity : 0.65;
+:root.dark-mode .c,  /* Comment */
+:root.dark-mode .c1, /* Comment.Single */
+:root.dark-mode .cm, /* Comment.Multiline */
+:root.dark-mode .cs, /* Comment.Special */
+:root.dark-mode .sd, /* Literal.String.Doc */
+:root.dark-mode .w   /* Text.Whitespace */ {
+	/* any kind of normal comment */
+	color : #416e41;
+	font-style : italic;
+}
+
+:root.dark-mode .cp /* Comment.Preproc */ {
+	/* pre-processor macros */
+	color : #7d5ba1;
+}
+
+:root.dark-mode .ge /* Generic.Emph */ {
+	/* markdown emphasis */
+	font-style: italic;
+}
+
+:root.dark-mode .gs /* Generic.Strong */ {
+	/* markdown bold */
+	font-weight: bold;
+}
+
+:root.dark-mode .gh /* Generic.Heading */ {
+	/* markdown heading */
+	color : #000080;
+	font-weight : bold;
+	text-decoration : underline;
+}
+
+:root.dark-mode .gu /* Generic.Subheading */ {
+	/* markdown subheading */
+	color: #800080;
+	font-weight: bold;
+}
+
+:root.dark-mode .gi /* Generic.Inserted */ {
+	/* diff addition */
+	color : #00A000;
+}
+
+:root.dark-mode .gd /* Generic.Deleted */ {
+	/* diff deletion */
+	color : #A00000;
+}
+
+:root.dark-mode .go, /* Generic.Output */
+:root.dark-mode .gp  /* Generic.Prompt */ {
+	/* no idea! */
+	color : #c65d09;
+	font-weight : bold;
 }
 
 :root.dark-mode .k,  /* Keyword */
@@ -665,6 +704,97 @@ input[type='checkbox'] + label {
 :root.dark-mode .kr, /* Keyword.Reserved */
 :root.dark-mode .bp  /* Name.Builtin.Pseudo */ {
 	/* actual keywords */
-	color : #0FF;
+	color : #5c5c9b;
 	font-weight : bold;
+}
+
+:root.dark-mode .kt /* Keyword.Type */ {
+	/* primitive data types */
+	color : #0078aa;
+}
+
+:root.dark-mode .nb /* Name.Builtin */ {
+	/* built-in function */
+	color : #cf794f;
+}
+
+:root.dark-mode .na, /* Name.Attribute */
+:root.dark-mode .nc, /* Name.Class */
+:root.dark-mode .nd, /* Name.Decorator */
+:root.dark-mode .ni, /* Name.Entity */
+:root.dark-mode .ne, /* Name.Exception */
+:root.dark-mode .nn  /* Name.Namespace */ {
+	/* types and other special keywords */
+	color : #555555;
+	font-weight : bold;
+}
+
+:root.dark-mode .nf /* Name.Function */ {
+	/* function call */
+	color : #8f5c8f;
+}
+
+:root.dark-mode .nl, /* Name.Label */
+:root.dark-mode .nt  /* Name.Tag */ {
+	/* tags */
+	color : #002070;
+	font-weight : bold;
+}
+
+:root.dark-mode .n, /* Name */
+:root.dark-mode .nv, /* Name.Variable */
+:root.dark-mode .vc, /* Name.Variable.Class */
+:root.dark-mode .vg, /* Name.Variable.Global */
+:root.dark-mode .vi  /* Name.Variable.Instance */ {
+	/* user variables */
+	color : var(--foreground);
+	opacity : 0.9;
+}
+
+:root.dark-mode .vm /* Name.Variable.Magic */ {
+	/* macro names */
+	color : #a72555;
+}
+
+:root.dark-mode .p, /* Punctuation */
+:root.dark-mode .o, /* Operator */
+:root.dark-mode .ow /* Operator.Word */ {
+	/* operators */
+	color : var(--foreground);
+}
+
+:root.dark-mode .kc, /* Keyword.Constant */
+:root.dark-mode .no  /* Name.Constant */ {
+	/* literals */
+	color : #7a7eab;
+}
+
+:root.dark-mode .m,  /* Literal.Number */
+:root.dark-mode .mb, /* Literal.Number.Bin */
+:root.dark-mode .mh, /* Literal.Number.Hex */
+:root.dark-mode .mo, /* Literal.Number.Oct */
+:root.dark-mode .mf, /* Literal.Number.Float */
+:root.dark-mode .mi, /* Literal.Number.Integer */
+:root.dark-mode .il  /* Literal.Number.Integer.Long */ {
+	/* numeric literals */
+	color : #cf5e5e;
+}
+
+:root.dark-mode .s,  /* Literal.String */
+:root.dark-mode .sb, /* Literal.String.Backtick */
+:root.dark-mode .sc, /* Literal.String.Char */
+:root.dark-mode .s2, /* Literal.String.Double */
+:root.dark-mode .sx, /* Literal.String.Other */
+:root.dark-mode .sr, /* Literal.String.Regex */
+:root.dark-mode .s1, /* Literal.String.Single */
+:root.dark-mode .sh, /* Literal.String.Heredoc */
+:root.dark-mode .ss  /* Literal.String.Symbol */ {
+	/* string literals */
+	color : #c78888;
+}
+
+:root.dark-mode .se, /* Literal.String.Escape */
+:root.dark-mode .si  /* Literal.String.Interpol */ {
+	/* escape sequences and template literals */
+	color : #7a7eab;
 }
