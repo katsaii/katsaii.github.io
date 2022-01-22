@@ -14,6 +14,18 @@ class KatScript < Rouge::RegexLexer
         Set.new %w(true false inf NaN none)
     end
 
+    def match_name(chunk, default=Name::Variable)
+        if keyword_reserved.include?(chunk)
+            token Keyword
+        elsif keyword_constant.include?(chunk)
+            token Keyword::Constant
+        elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
+            token Keyword::Type
+        else
+            token default
+        end
+    end
+
     state :root do
         rule %r/\s+/, Text::Whitespace
         rule %r/--[^\n]*/, Comment::Single
@@ -25,17 +37,11 @@ class KatScript < Rouge::RegexLexer
         rule %r/[*\/\\!~&+%|^<>=?\-]/, Operator
         rule %r/:\s*[A-Za-z0-9_]*/, Name::Builtin
         rule %r/:\s*[*\/\\!~&+%|^<>=?\-]*/, Name::Builtin
+        rule %r/[A-Za-z0-9_]+(?=\()/ do |m|
+            match_name(m[0], Name::Function)
+        end
         rule %r/[A-Za-z_]+[A-Za-z0-9_]*/ do |m|
-            chunk = m[0]
-            if keyword_reserved.include?(chunk)
-                token Keyword
-            elsif keyword_constant.include?(chunk)
-                token Keyword::Constant
-            elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
-                token Keyword::Type
-            else
-                token Name::Variable
-            end
+            match_name(m[0])
         end
     end
 end

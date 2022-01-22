@@ -53,6 +53,24 @@ class Gml < Rouge::RegexLexer
         $gml_err
     end
 
+    def match_name(chunk, default=Name::Variable)
+        if builtins.include?(chunk)
+            token Name::Builtin
+        elsif keyword_reserved.include?(chunk)
+            token Keyword
+        elsif keyword_constant.include?(chunk)
+            token Keyword::Constant
+        elsif generic_deleted.include?(chunk)
+            token Generic::Deleted
+        elsif chunk.match?(/^[A-Z0-9_]*$/)
+            token Name::Variable::Magic
+        elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
+            token Keyword::Type
+        else
+            token default
+        end
+    end
+
     state :root do
         rule %r/\s+/, Text::Whitespace
         rule %r/\/\/[^\n]*/, Comment::Single
@@ -70,36 +88,10 @@ class Gml < Rouge::RegexLexer
         rule %r/[()\[\]{};,]/, Punctuation
         rule %r/[*\/!#@~&+%\\|^<>=?\-:.]/, Operator
         rule %r/[A-Za-z0-9_]+(?=\()/ do |m|
-            chunk = m[0]
-            if builtins.include?(chunk)
-                token Name::Builtin
-            elsif keyword_reserved.include?(chunk)
-                token Keyword
-            elsif chunk.match?(/^[A-Z0-9_]*$/)
-                token Name::Variable::Magic
-            elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
-                token Keyword::Type
-            else
-                token Name::Function
-            end
+            match_name(m[0], Name::Function)
         end
         rule %r/([A-Za-z0-9_])*/ do |m|
-            chunk = m[0]
-            if builtins.include?(chunk)
-                token Name::Builtin
-            elsif keyword_reserved.include?(chunk)
-                token Keyword
-            elsif keyword_constant.include?(chunk)
-                token Keyword::Constant
-            elsif generic_deleted.include?(chunk)
-                token Generic::Deleted
-            elsif chunk.match?(/^[A-Z0-9_]*$/)
-                token Name::Variable::Magic
-            elsif chunk.match?(/^[A-Z][A-Za-z0-9_]*$/)
-                token Keyword::Type
-            else
-                token Name::Variable
-            end
+            match_name(m[0])
         end
     end
 end
