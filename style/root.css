@@ -585,7 +585,7 @@ input[type='checkbox'] + label {
 .vi  /* Name.Variable.Instance */ {
 	/* user variables */
 	color : var(--foreground);
-	opacity : 0.8;
+	opacity : 0.9;
 }
 
 .vm /* Name.Variable.Magic */ {
@@ -631,7 +631,7 @@ input[type='checkbox'] + label {
 .sd, /* Literal.String.Doc */
 .sh  /* Literal.String.Heredoc */ {
 	/* documentation strings */
-	color : #00f;
+	color : #080;
 	font-style : italic;
 }
 
@@ -643,7 +643,7 @@ input[type='checkbox'] + label {
 
 .ss /* Literal.String.Symbol */ {
 	/* Ruby symbols */
-	color : #fa3232;
+	color : #b91010;
 }
 
 /*
