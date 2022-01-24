@@ -1,37 +1,39 @@
 # Preface
 
-This post is not intended to be preached as a "best practice." I just wanted to talk about one method of managing global state that I find useful. Just like with any problem, you should always consider different approaches based on your current priorities. `d (u _ u.)\`
+My intention with this post is not to preach a "[best practice](https://youtu.be/gc8mDZwUIfo?t=69s);" I just wanted to talk about one method of managing global state that I find useful. Just like with any problem, you should always consider different approaches based on your current priorities. `d (u _ u.)\`
 
 # The Problem with Using Global Variables
 
-Okay... There are actually many problems with using global variables, some of which are useful to look out for. However, I'm not concerned with discussing those problems within this post. Instead, I want to discuss the situations where some value *really needs to be global*. (But if you're just itching to know, you can read all about some common pitfalls in this [WikiWikiWeb article](https://wiki.c2.com/?GlobalVariablesAreBad)[^wiki-glob].)
+Plenty of online articles describe some of many reasons you should avoid global variables, typically because they can make reasoning about programs difficult[^wiki-glob]. However, I'm not concerned with discussing those problems within this post. Instead, I want to cover the situations where some value *really needs to be global*.
 
-So what is the problem? In GML, global variables are only defined if and when the program reaches a point where a value needs to be assigned to a global variable with that name. So, if your global variable definitions are hidden away inside some script or object that the program never reaches, then those global variables will never exist. For example, in the following code the global variable `name` gets defined before `colour`, and the global variable `hidden` is never defined:
+So what is the problem? In GML, global variables are only created when the program reaches a point where that global variable is assigned a value. So, if your global variable definitions are hidden away inside some script or object that the program never reaches, then those global variables will never exist. For example, in the following code the global variable `name` gets defined before `colour`, and the global variable `hidden` is never defined:
 ```gml
 global.name   = "Kirby";  // global.name is defined first
 global.colour = 0xcbc0ff; // global.colour is defined second
 
-return;
+return; // this return statement will prevent
+        // any code below it from executing
 
-// because this line is never reached, the global variable is never defined
+// because this line is never reached
+// the global variable is never defined
 global.hidden = "(O x O) help!";
 ```
-Attempting to access the `hidden` global variable will raise an error telling you that the global variable doesn't exist! This behaviour can be a problem if one part of your game expects a global variable to exist before it's initialised.
+Attempting to access the `hidden` global variable will raise an error telling you that the global variable doesn't exist! This behaviour can become a problem if one part of your game depends on a global variable being declared some place else.
 
 Lets imagine a project with two objects:
 
  - `obj_control`, which initialises a global variable; and
  - `obj_player`, which uses the global variable that `obj_control` declares.
 
-In order to avoid an error in your game, you **need to guarantee** that the `obj_control` object is created before `obj_player`, otherwise `obj_player` may try to access the global variable before it exists. This can be a particularly annoying bug to track down if it only occurs randomly, which is not too far-fetched if you depend on the creation order of instances in rooms.
+In order to avoid an error in your game, you **need to guarantee** that the `obj_control` object is created before `obj_player`, otherwise `obj_player` may try to access the global variable before it exists. This can be a particularly annoying bug to track down if it (seemingly) occurs randomly, which is not too far-fetched if you depend on the creation order of instances in rooms.
 
 ## Initialisation Rooms
 
-One common method of fixing this bug is to have a so-called "initialisation room," where short-lived objects declare your global variables. This solution works fine but it can be brittle, since it depends on trusting the developer to add any newly introduced global variables to this list. Additionally, this design breaks down if there are other objects in the initialisation room that depend on the values of certain global variables that may or may not be defined yet. (You could get around this by having a single object `obj_mega_initialiser` that has a thousand lines of initialisation code in its create event, but I shudder at the thought.)
+One common method of patching this bug is to have a so-called "initialisation room," where short-lived objects declare your global variables. This solution works fine, but it can be brittle since it depends on trusting the developer to add any newly introduced global variables to this list. Additionally, this approach is also susceptible to the same instance order problem mentioned in the previous section, if you have multiple initialisation objects that may depend on each other.
 
 ## Checking If the Variable Exists
 
-Another potential solution would be to check if the global variable exists with the `variable_global_exists` function before you attempt to access it, like so:
+Another potential approach would be to check if the global variable exists with the `variable_global_exists` function before you attempt to access it, like so:
 
 ```gml
 if (!variable_global_exists("highScore")) {
@@ -42,7 +44,7 @@ if (!variable_global_exists("highScore")) {
 var yay = global.highScore;
 ```
 
-Ignoring the obvious ergonomic issues with this proposal, duplicating this code in many places is not a good idea. (Yes, even if you squeeze it all onto a single line.) Instead, new functions can be defined that handle the "getting" and "setting" of the global variable automatically:
+There is a clear ergonomic issue with this approach, since the code repeats the name of the global variable (`highScore`) too often. If the plan is to use this pattern for every global variable, that is going to be a lot of repeating code. Ergonomic issues aside, duplicating this code in many places is not a good idea either. (Yes, even if you squeeze it all onto a single line.) Instead, new functions can be defined that handle the "getting" and "setting" of the global variable automatically:
 
 ```gml
 // note:
@@ -51,7 +53,7 @@ Ignoring the obvious ergonomic issues with this proposal, duplicating this code 
 
 function get_highscore() {
   if (!variable_global_exists("highScore")) {
-    // initialise the variable
+    // initialise the variable if it is unset
     global.highScore = 0;
   }
   return global.highScore;
