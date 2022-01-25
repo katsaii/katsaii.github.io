@@ -68,68 +68,99 @@ Now `get_highscore()` can be called in any object, at any time, and the global v
 
 I like this solution, but it's far from perfect. It's somewhat unrealistic to define unique "getter" and "setter" functions for every global variable that may be used in a codebase. Additionally, `global.highScore` still exists and is accessible, potentially inviting other contributers to use this variable and reintroduce the bugs we were originally trying to squish. As a team, you *could* agree to not use this specific global variable, or you *could* obfuscate its name to make accessing it less likely, but I feel like we can do better by using a new feature of GML 2.3: static variables...
 
-# Avoiding The Problem by using static variables
+# Static Variables
 
+Static variables are new type of variable introduced in version 2.3 of GML. Static variables and global variables are somewhat similar: both will stick around until you end the program. There are two useful differences between static variables and global variables, however:
 
+ - static variables can only be accessed from within the function it was defined in; and
+ - static variables are only ever initialised once, the first time the function that it was defined in is called.
+
+Any subsequent calls to the enclosing function will just ignore the initialisation code of any static variables. These features make it possible for functions to maintain their own kind of internal state; for example, a function that counts up from zero:
 
 ```gml
-global.playerName = "Jake";
-global.playerScore = 0;
-global.playerHiScore = 100;
+function counter() {
+  // declare the static variable
+  static count = 0;
+
+  // increment the count variable
+  var current = count;
+  count += 1;
+
+  // return the current count
+  return current;
+}
 ```
-becomes
+
+Calling the `counter` function repetitively will yield different results each time:
+
 ```gml
-function player_data() {
+var zero  = counter(); // 0
+var one   = counter(); // 1
+var two   = counter(); // 2
+var three = counter(); // 3
+```
+
+This is neat, but it is not what I'm writing this post about. The next section shows how this can be used to immitate global variables, whilst also preserving their ease of use.
+
+## Modifying Static Variables
+
+The useful feature of static variables I want to harness is their ability to be automatically initialised if they have not yet been. This would erase the need to use the `variable_global_exists` function for each variable we want to use.
+
+However, at first glance this doesn't seem feasible. Sure static variables can store some state inside of a function, but there isn't a way to modify the contents of the static variable from outside of the function... Right? Not entirely. If a static variable contains a reference to a data structure, and that reference is returned by the enclosing function, then it is possible to mutate that data structure, and by extension the contents of the static variable. For example, creating a static variable that stores a reference to an array data structure:
+
+```gml
+function witches() {
+  static names = [];
+  return names;
+}
+
+// add names to the array
+var names = witches();
+names[@ 0] = "Ashley";
+names[@ 1] = "Marisa";
+names[@ 2] = "Wanda";
+```
+
+Calling the `witches` function again will return the same array, this time containing three elements inserted into the array:
+
+```gml
+var sameNames = witches(); // ["Ashley", "Marisa", "Wanda"]
+```
+
+In this example, if you want the array to always contain these three names by default, the static variable declaration can be updated to:
+
+```gml
+static names = ["Ashley", "Marisa", "Wanda"];
+```
+
+Now when the `witches` function is called, the `names` array will be initialised with these three default values.
+
+This is already looking similar to the behaviour of global variables, except without the possibility of the `witches` list being unset. However, this idea can be taken one step further...
+
+# Replacing Global Variables with Static Variables
+
+The pattern shown in the previous section is not restricted to arrays. It's possible to use any kind of data structure, but structs resemble global variables best. For example, defining some static state for keeping scores is relatively short:
+
+```gml
+function scores() {
   static data = {
-    name : "Jake",
-    score : 0,
-    hiScore : 100,
+    current   : 10, // initialise the default values
+    highScore : 100,
   };
   return data;
 }
 ```
-accessing player data
-```gml
-var playerScore = player_data().score;
-```
 
-## Advantages over global variables
-
-more control over what gets assigned to your global variables
+Comparing this to typical global variables, there isn't much difference:
 
 ```gml
-function player_data() {
-  static data = {
-    score : 0,
-    hiScore : 100,
-    setScore : function(newScore) {
-      score = newScore;
-      if (score > hiScore) {
-        hiScore = score;
-      }
-    },
-    getScore : function() {
-      return score;
-    },
-    getHiScore : function() {
-      return hiScore;
-    }
-  };
-  return {
-    setScore : data.setScore,
-    getScore : data.getScore,
-    getHiScore : data.getHiScore,
-  };
-}
+global.scoresCurrent = 10;
+global.scoresHighScore = 100;
 ```
 
-read-only global state
-```gml
-function team_colours() {
-  static colours = [c_red, c_blue, c_green]; // this array can be updated externally, but never reassigned
-  return colours;
-}
-```
+# Summary
+
+Yeah.
 
 # References
 
