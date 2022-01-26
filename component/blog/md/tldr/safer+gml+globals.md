@@ -1,29 +1,27 @@
 Instead of this...
 
 ```gml
-global.playerName  = "Ashley";
-global.playerAge   = 15;
-global.playerScore = 1000;
+global.scoresCurrent = 10;
+global.scoresHighscore += 100;
 ```
 
 ...I like to do this...
 
 ```gml
-function player_data() {
-  static player = {
-    name  : "Ashley",
-    age   : 15,
-    score : 9,
+function scores() {
+  static data = {
+    current   : 0, // initialise the default values
+    highscore : 0,
   };
-  return player;
+  return data;
 }
 ```
 
 ...and then get/set these global values like...
 
 ```gml
-player_data().age += 1;
-player_data().name = string(player_data().score) + "-Volt";
+scores().current = 10;
+scores().highscore += 100;
 ```
 
 ...because it guarantees that your data will be initialised before it's accessed.
