@@ -4,6 +4,10 @@
 - title: "Writing Safer Global Variables in GameMaker Studio 2"
   short-title: "Safer GML Globals"
   desc: "By replacing global variables with functions that return static data structures, common variable reference pitfalls can be avoided in GameMaker Language (GML)."
+  date:
+      day: 27
+      month: 1
+      year: 2022
 - title: "A Practical Approach to Enriching the Standard Library of GameMaker Studio 2"
   short-title: "GML Library Extensions"
   desc: "By exploiting an undocumented feature of macros in GameMaker Language (GML), calls to standard library functions can be intercepted in order to help implement missing features."
