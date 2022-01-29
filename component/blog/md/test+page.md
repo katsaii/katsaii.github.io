@@ -85,6 +85,65 @@ end
 <%= some erb %>
 ```
 
+```cate
+use lib::io
+
+def const = 2r0110
+
+def main(args : arr) : none {
+  io::print ...
+    factorial(10) -- 3628800
+
+  result = none
+  for::loop outer <- [1, 2] {
+    for inner <- [3, 4] {
+      if outer == 1 {
+        continue::loop
+      }
+      result = inner * outer
+      break::loop
+    }
+  }
+
+  print result
+}
+
+def factorial(n) {
+  if n <= 1 {
+    1
+  } else {
+    factorial(n - 1) * n
+  }
+}
+
+def raise_error() : int32 throws 'some_error {
+  throw 'some_error
+}
+
+def catch_errors() {
+  catch {
+    a = try raise_error()
+    b = try raise_error()
+    a + b
+  }
+}
+
+impl (T, T) as Pair::[T] {
+  def fst(self) {
+    self.0
+  }
+
+  def snd(self) {
+    self.1
+  }
+}
+
+def proj_x(point) {
+  use impl Pair
+  point.fst() -- becomes Pair::fst(point)
+}
+```
+
 # References
 
 [^hi]: This is a footnote.

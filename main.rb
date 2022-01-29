@@ -7,6 +7,7 @@ load "rouge/cosy.rb"
 load "rouge/gml.rb"
 load "rouge/catspeak.rb"
 load "rouge/katscript.rb"
+load "rouge/catears.rb"
 
 ##
 # Helper function for checking if a file exists and reading it, otherwise returning `nil`
@@ -191,6 +192,7 @@ def markup(src, index=false)
                     when "gmlext" then GmlExt.new
                     when "cats" then Catspeak.new
                     when "kats" then KatScript.new
+                    when "cate" then Catears.new
                     else Rouge::Lexer.find(type)
                 end
                 if lex == nil
