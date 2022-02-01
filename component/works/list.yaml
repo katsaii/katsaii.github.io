@@ -1,14 +1,21 @@
 artwork:
+ - name: Wandaful
+   mirrors:
+    - "https://twitter.com/katsaii/status/1482418140986454017"
+    - "https://katxaii.tumblr.com/post/673889766926909440/wandaful"
  - name: Fire
    mirrors:
     - "https://twitter.com/katsaii/status/1361498319617478661"
+    - "https://katxaii.tumblr.com/post/673323316498546689/kandel-is-playing-with-fire"
  - name: Marisa
    mirrors:
     - "https://twitter.com/katsaii/status/1412221294490357761"
     - "https://www.deviantart.com/katxaii/art/Marisa-Touhou-886682955"
+    - "https://katxaii.tumblr.com/post/673644739220963328/marisa-touhou-from-hit-game-series-of-the-same"
  - name: Vaniela
    mirrors:
     - "https://twitter.com/katsaii/status/1419039755409444869"
+    - "https://katxaii.tumblr.com/post/673020099902472192/some-art-of-mashmerlows-character"
  - name: Gamer
    mirrors:
     - "https://twitter.com/katsaii/status/1426247340948590594"
