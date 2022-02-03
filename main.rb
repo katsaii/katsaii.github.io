@@ -249,6 +249,7 @@ $header = read("common/header.html")
 $meta = read("common/meta.html")
 $homepage = read("common/homepage.html")
 $lang = "lang=\"en\""
+$current_year = "2022"
 
 # load all files in `ruby` directory
 filenames = Dir.entries("ruby")
