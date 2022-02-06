@@ -90,58 +90,60 @@ use lib::io
 
 def const = 2r0110
 
-def main(args : arr) : none {
+def main(args : arr) : none
   io::print ...
     factorial(10) -- 3628800
 
   result = none
-  for::loop outer <- [1, 2] {
-    for inner <- [3, 4] {
-      if outer == 1 {
+  for::loop outer in [1, 2]
+    for inner in [3, 4]
+      if outer == 1
         continue::loop
-      }
+      end
       result = inner * outer
       break::loop
-    }
-  }
+    end
+  end for::loop
 
   print result
-}
+end
 
-def factorial(n) {
-  if n <= 1 {
+def factorial(n)
+  if n <= 1
     1
-  } else {
+  else
     factorial(n - 1) * n
-  }
-}
+  end if
+end def
 
-def raise_error() : int32 throws 'some_error {
+def raise_error() : int32 throws 'some_error
   throw 'some_error
-}
+end
 
-def catch_errors() {
-  catch {
+def catch_errors()
+  catch
     a = try raise_error()
     b = try raise_error()
     a + b
-  }
-}
+  end catch -- including this is entirely optional
+            -- just gives some more checks at compile time
+            -- as a sanity check
+end
 
-impl (T, T) as Pair::[T] {
-  def fst(self) {
+impl Pair::[A, B] for (A, B)
+  def fst(self)
     self.0
-  }
+  end
 
-  def snd(self) {
+  def snd(self)
     self.1
-  }
-}
+  end
+end impl
 
-def proj_x(point) {
+def proj_x(point)
   use impl Pair
   point.fst() -- becomes Pair::fst(point)
-}
+end
 ```
 
 # References

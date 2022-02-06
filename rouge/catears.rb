@@ -8,8 +8,8 @@ class Catears < Rouge::RegexLexer
 
     def keyword_reserved
         Set.new %w(
-            if else and or for while continue break def ret
-            try catch throw throws use impl as
+            end if else and or for in while continue break def ret
+            try catch throw throws use impl
         )
     end
 
