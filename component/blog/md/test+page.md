@@ -88,16 +88,25 @@ end
 ```cate
 use lib::io
 
+macro `&&`(condition, rhs)
+  var lhs = condition
+  if lhs
+    lhs
+  else
+    rhs
+  end
+end macro
+
 def const = 2r0110
 
 def main(args : arr) : none
   io::print ...
     factorial(10) -- 3628800
 
-  result = none
+  var result
   for::loop outer in [1, 2]
     for inner in [3, 4]
-      if outer == 1
+      if outer == 1 && false
         continue::loop
       end
       result = inner * outer
@@ -122,27 +131,12 @@ end
 
 def catch_errors()
   catch
-    a = try raise_error()
-    b = try raise_error()
+    var a = try raise_error()
+    var b = try raise_error()
     a + b
   end catch -- including this is entirely optional
             -- just gives some more checks at compile time
             -- as a sanity check
-end
-
-impl Pair::[A, B] for (A, B)
-  def fst(self)
-    self.0
-  end
-
-  def snd(self)
-    self.1
-  end
-end impl
-
-def proj_x(point)
-  use impl Pair
-  point.fst() -- becomes Pair::fst(point)
 end
 ```
 

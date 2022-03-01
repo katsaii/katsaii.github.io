@@ -8,8 +8,8 @@ class Catears < Rouge::RegexLexer
 
     def keyword_reserved
         Set.new %w(
-            end if else and or for in while continue break def ret
-            try catch throw throws use impl
+            end if else for in while continue break def ret
+            try catch throw throws use impl macro var
         )
     end
 
@@ -39,6 +39,7 @@ class Catears < Rouge::RegexLexer
         rule %r/'[A-Za-z0-9_]+/, Str::Symbol
         rule %r/[()\[\]{};:,.]/, Punctuation
         rule %r/[*\/\\!~&+%|^<>=?\-]/, Operator
+        rule %r/`[^`]+`/, Operator
         rule %r/[A-Za-z0-9_]+(?=\()/ do |m|
             match_name(m[0], Name::Function)
         end
