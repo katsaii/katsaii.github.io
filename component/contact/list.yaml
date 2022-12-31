@@ -1,5 +1,5 @@
 - name: GitHub
-  user: /NuxiiGit
+  user: /katsaii
 - name: Twitter
   user: "@katsaii"
 - name: Discord
@@ -8,9 +8,11 @@
   user: /katsaii
 - name: Newgrounds
   user: "@Katsaii"
-- name: DeviantArt
-  user: /katxaii
 - name: Tumblr
   user: "@katxaii"
+- name: Mastodon
+  user: "@katsaii@mastodon.art"
+- name: Cohost
+  user: "/katsaii"
 - name: Email
   user: "katsaiinuxii@gmail.com"
