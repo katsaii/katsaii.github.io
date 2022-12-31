@@ -10,7 +10,6 @@ artwork:
  - name: Marisa
    mirrors:
     - "https://twitter.com/katsaii/status/1412221294490357761"
-    - "https://www.deviantart.com/katxaii/art/Marisa-Touhou-886682955"
     - "https://katxaii.tumblr.com/post/673644739220963328/marisa-touhou-from-hit-game-series-of-the-same"
  - name: Vaniela
    mirrors:
@@ -112,14 +111,6 @@ artwork:
    mirrors:
     - "https://twitter.com/katsaii/status/1397007065097416705"
     - "https://katxaii.tumblr.com/post/666375553533837312/wondrous-world"
- - name: Launcher
-   mirrors:
-    - "https://www.deviantart.com/katxaii/art/Launcher-895506451"
-    - "https://katxaii.tumblr.com/post/665697186683715584"
- - name: Starve
-   mirrors:
-    - "https://steamcommunity.com/sharedfiles/filedetails/?id=643895908"
-    - "https://katxaii.tumblr.com/post/665971496570716160/an-old-artwork-i-really-like"
 music:
  - name: "Seaside Rave"
    mirrors:

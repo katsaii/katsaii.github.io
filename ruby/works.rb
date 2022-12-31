@@ -6,9 +6,9 @@ $links = [
     { :key => "soundcloud", :id => "SC", :alias => "SoundCloud" },
     { :key => "bandcamp", :id => "Bc", :alias => "Bandcamp" },
     { :key => "newgrounds", :id => "Ng", :alias => "Newgrounds" },
-    { :key => "deviantart", :id => "DA", :alias => "DeviantArt" },
     { :key => "tumblr", :id => "T", :alias => "Tumblr" },
-    { :key => "steamcommunity", :id => "St", :alias => "Steam" }
+    { :key => "mastodon", :id => "M", :alias => "Mastodon" },
+    { :key => "cohost", :id => "Co", :alias => "Cohost" },
 ]
 
 ##
