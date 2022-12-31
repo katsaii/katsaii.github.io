@@ -1,1 +1,0 @@
-A tool designed to generate and manipulate media playlist files. The application currently supports `.asx`, `.m3u`, `.m3u8`, `.pls`, and `.mpcpl` playlist formats. Additionally, set theoric operations can be applied to one or more playlists to add, combine or filter files from a playlist.

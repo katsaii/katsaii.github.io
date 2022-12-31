@@ -1,1 +1,0 @@
-This proof-of-concept was inspired by the [mixfix operators](https://agda.readthedocs.io/en/v2.5.2/language/mixfix-operators.html) from the Agda programming language. It consists of a backtracking parser and tree-walk interpreter.

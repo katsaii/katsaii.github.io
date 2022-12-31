@@ -1,1 +1,0 @@
-A mathematical expression parser, evaluator, and numerical solver. The calculator currently supports common mathematical functions, complex numbers and vectors. An implementation of the hill-climbing algorithm for complex numbers is utilised in order to solve equations containing a single unknown variable.
