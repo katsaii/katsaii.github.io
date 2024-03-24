@@ -1,0 +1,21 @@
+body {
+	height : 100vh;
+}
+
+#avatar {
+	width : 7em;
+}
+/*
+.box {
+	width : 200px;
+	padding : 50px 10px;
+}
+*/
+.contact {
+	padding : 1em 1em;
+}
+
+#content > div.flex {
+	margin : 0px auto;
+	width : 50%;
+}

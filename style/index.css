@@ -1,0 +1,43 @@
+body {
+	height : 100vh;
+}
+
+#content {
+	margin : 0px 9%;
+}
+
+#title {
+	margin-top : 0px;
+	letter-spacing : 0.5em;
+	font-size : 1.1em;
+}
+
+#title::after {
+	content : "katsaii";
+}
+
+#title:hover::after {
+	content : "nuxii";
+}
+
+#toolbar {
+	font-family : var(--font-mono);
+}
+
+#avatar {
+	width : 20em;
+	--angle : 2deg;
+}
+
+#jumbo {
+	width : 20em;
+}
+
+.box-a {
+	padding : 50px 5px;
+	width : 425px;
+}
+
+.box-b {
+	width : 400px;
+}
