@@ -1,0 +1,26 @@
+body {
+	height : 100vh;
+}
+
+#avatar {
+	width : 10em;
+}
+
+#avatar-top {
+	width : 12em;
+}
+
+.box {
+	width : 200px;
+	padding : 50px 30px;
+}
+
+.record {
+	padding : 0.75em 0.75em;
+}
+
+#content {
+	margin : 0px auto;
+	width : 500px;
+	max-width : 75%;
+}
