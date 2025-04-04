@@ -1,0 +1,76 @@
+#header {
+	text-align : center;
+}
+
+#header > h1 {
+	margin-bottom : 0px;
+}
+
+.date {
+	font-family : var(--font-mono);
+}
+
+.justify h2 {
+	/* position : -webkit-sticky; */
+	/* position : sticky; */
+	top : 0px;
+	background-color : var(--background);
+	border-width : 0;
+	border-style : none;
+	border-bottom-width : thin;
+	border-bottom-style : solid;
+	border-image-slice : 1;
+	border-image-source : linear-gradient(to right, var(--foreground), var(--background), var(--background), var(--background));
+}
+
+.justify h2,
+.justify h3,
+.justify h4,
+.justify h5,
+.justify h6 {
+	white-space : nowrap;
+	overflow : hidden;
+}
+
+.footnotes ol {
+	list-style-type : none;
+	list-style-position : outside;
+	margin-left : 0px;
+	counter-reset : footnote-count;
+}
+
+.footnotes li {
+	counter-increment : footnote-count;
+	margin-top : 1em;
+}
+
+.footnotes li::marker {
+	content : "[" counter(footnote-count) "] ";
+}
+
+.footnotes li p {
+	display : block;
+	text-align : justify;
+}
+
+.footnote-ref {
+	vertical-align : baseline;
+	font-size : 1em;
+}
+
+.footnote-ref::before {
+	content : " [";
+}
+
+.footnote-ref::after {
+	content : "]";
+}
+
+.footnote-ref a {
+	color : var(--foreground);
+}
+
+.footnotes .ref-url {
+	font-family : var(--font-mono);
+	word-break : break-all;
+}

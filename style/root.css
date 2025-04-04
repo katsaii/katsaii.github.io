@@ -1,0 +1,798 @@
+:root {
+	--colour-light : #f9f9f9;
+	--colour-light-2 : #eeeeee;
+	--colour-dark : #292929;
+	--colour-dark-2 : #1f1f1f;
+	--colour-accent : #6082b6;
+	--colour-accent-strawberry : #ff43a4;
+	--colour-accent-gold : coral;
+	--font-prop : 'Open Sans', Arial, sans-serif;
+	--font-mono : Consolas, monospace;
+	--margin-left : 20%;
+	--margin-right : var(--margin-left);
+	--background : var(--colour-light);
+	--foreground : var(--colour-dark);
+	--background-2 : var(--colour-light-2);
+	--foreground-2 : var(--colour-dark-2);
+	--avatar-image-opacity : 100%;
+}
+
+/* @media (prefers-color-scheme: dark) */
+:root.dark-mode {
+	--colour-light : #f9f9f9b3;
+	--colour-light-2 : #eeeeeeb3;
+	--background : var(--colour-dark);
+	--foreground : var(--colour-light);
+	--background-2 : var(--colour-dark-2);
+	--foreground-2 : var(--colour-light-2);
+	--avatar-image-opacity : 70%;
+}
+
+:root[debug=enable] * {
+	outline : 1px dashed var(--colour-accent-strawberry);
+}
+
+::-webkit-scrollbar {
+	width : 10px;
+}
+
+::-webkit-scrollbar-track {
+	background : var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+	background : var(--colour-accent);
+	border-radius : 20px;
+	border : 3px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background : var(--colour-accent-strawberry);
+}
+
+@-moz-document url-prefix() {
+	* {
+		scrollbar-color : var(--colour-accent) var(--background);
+		scrollbar-width : thin;
+	}
+}
+
+* {
+	color : var(--foreground);
+	font-family : var(--font-prop);
+}
+
+html, body {
+	margin : 0px;
+	padding : 0px;
+}
+
+body {
+	background-color : var(--background);
+}
+
+hr {
+	border-width : 0;
+	border-style : none;
+	border-bottom-width : thin;
+	border-bottom-style : solid;
+	border-image-slice : 1;
+	border-image-source : linear-gradient(to right, var(--background), var(--background), var(--foreground), var(--background), var(--background));
+}
+
+button.unstyled {
+	border : none;
+	padding : 0;
+	background : none;
+}
+
+.anim-tilt {
+	--duration : 0.4s;
+	--angle : 2deg;
+	transition : transform var(--duration);
+}
+
+.anim-tilt:hover {
+	transform : rotate(var(--angle));
+}
+
+.anim-wobble {
+	--duration : 0.25s;
+	--angle : 0.5deg;
+}
+
+@keyframes keyframes-fade {
+	from {
+		background-color : var(--colour-accent-strawberry);
+	}
+}
+
+:target {
+	animation : keyframes-fade 0.5s;
+}
+
+@keyframes keyframes-wobble {
+	0% {
+		transform : rotate(0deg);
+	}
+	25% {
+		transform : rotate(calc(-1 * var(--angle)));
+	}
+	75% {
+		transform : rotate(var(--angle));
+	}
+	100% {
+		transform : rotate(0deg);
+	}
+}
+
+.anim-wobble:hover {
+	animation : keyframes-wobble var(--duration) ease-in-out infinite;
+}
+
+.anim-squish {
+	--squish-amount : 1.1;
+	--duration : 0.05s;
+	transition : transform var(--duration);
+	transition-timing-function : ease-out;
+}
+
+.anim-squish:active {
+	transform : scale(var(--squish-amount), calc(1 / var(--squish-amount)));
+}
+
+.anim-3d {
+	--angle-x : 25deg;
+	--angle-y : 0deg;
+	--angle-z : 0deg;
+	--focal-dist : 50em;
+	--duration : 0.25s;
+	transition : transform var(--duration);
+}
+
+.anim-3d:active {
+	transform : perspective(var(--focal-dist)) rotateX(var(--angle-x)) rotateY(var(--angle-y)) rotateZ(var(--angle-z));
+}
+
+.sidebar {
+	position : fixed;
+	left : 2vw;
+	width : calc(var(--margin-left) - 4vw);
+}
+
+#homepage {
+	bottom : 2vh;
+	text-align : center;
+}
+
+#homepage > * > img {
+	width : 200px;
+	max-width : 100%;
+}
+
+#index {
+	--padding : 2em;
+	overflow : auto;
+	overflow-x : hidden;
+	height : calc(70vh - 2 * var(--padding));
+	margin-top : var(--padding);
+	font-size : 1em;
+}
+
+#index > .h2 {
+	padding-left : 1em;
+}
+
+#index > .h3 {
+	padding-left : 2em;
+}
+
+#index > .h4 {
+	padding-left : 3em;
+}
+
+#index > .h5 {
+	padding-left : 4em;
+}
+
+#index > .h6 {
+	padding-left : 4em;
+}
+
+#header {
+	padding-top : 100px;
+}
+
+#footer {
+	padding : 50px 0px;
+}
+
+@media screen and (max-width : 12in) {
+	:root {
+		--margin-left : 5%;
+	}
+
+	.sidebar {
+		position : static;
+		width : auto;
+		margin : 15px var(--margin-right) 0px var(--margin-left);
+	}
+
+	#index {
+		height : auto;
+	}
+
+	#header {
+		padding-top : 20px;
+	}
+}
+
+#content {
+	margin : 0px var(--margin-right) 0px var(--margin-left);
+	height : 100%;
+}
+
+img {
+	max-width : 100%;
+	max-height : 100%;
+}
+
+img.avatar {
+	opacity : var(--avatar-image-opacity);
+}
+
+img#bulb {
+	width : 2.5em;
+}
+
+.centreing img, img.centreing {
+	display : block;
+	margin : 0 auto;
+}
+
+a {
+	color : var(--colour-accent);
+	/*font-family : var(--font-mono);*/
+	/* font-weight : bold; */
+	text-decoration : none;
+	transition : color 0.25s;
+	cursor : pointer;
+}
+
+a:hover {
+	color : var(--colour-accent-strawberry);
+	text-decoration : underline;
+}
+
+a[target=_blank]:hover {
+	color : var(--colour-accent-gold);
+}
+
+a:active {
+	transition: color 0.0s;
+	color : var(--foreground);
+}
+
+:not(pre) > code {
+	border-radius : 4px;
+	background-color : var(--background-2);
+	padding : 0 4px;
+	/*border-bottom : 1px dashed var(--foreground);*/
+}
+
+:not(pre) > code,
+.long-word {
+	overflow-wrap : break-word;
+}
+
+code, code *, span.tex, div.tex {
+	font-family : var(--font-mono);
+}
+
+.inline {
+	display : inline-block;
+}
+
+.tex {
+	white-space : pre;
+}
+
+.latex {
+	fill : var(--foreground)
+}
+
+pre {
+	/*padding-left : 0.1em;*/
+	display : block;
+	overflow-x : auto;
+	border-radius : 4px;
+	background-color : var(--background-2);
+	padding : 0 0 0.25em 1em;
+	margin-left : 0.5em;
+	margin-right : 0.5em;
+	/*background : var(--background);*/
+	/* border-left : 1px dashed var(--foreground); */
+}
+
+p.justify {
+	text-align : justify;
+}
+
+.justify {
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+.justify > p {
+	margin-top : 0px;
+	margin-bottom : 0px;
+	text-align : justify;
+}
+
+p {
+	line-height : 1.5;
+}
+
+.justify > br {
+	display : none;
+}
+
+.justify > br + p,
+.justify > p + p {
+	text-indent : 2em;
+}
+
+.justify > div.centre {
+	display : block;
+	margin-top : 10px;
+	margin-left : auto;
+	margin-right : auto;
+}
+
+.figure {
+	padding-left : 20px;
+	padding-right : 20px;
+}
+
+.caption {
+	padding-top : 15px;
+}
+
+div + .caption,
+video + .caption,
+img + .caption,
+pre + .caption,
+br + .caption {
+	padding-top : 0px;
+	padding-bottom : 15px;
+}
+
+ul {
+	list-style-type : circle;
+}
+
+ol {
+	list-style-type : upper-roman;
+}
+
+.justify > table {
+	margin-left : auto;
+	margin-right : auto;
+}
+
+table {
+	border-collapse : collapse;
+}
+
+.justify td, .justify th {
+	padding : 8px;
+	border : 1px solid var(--background-2);
+}
+
+.justify tr:nth-child(even) {
+	background-color : var(--background-2);
+}
+
+.justify th {
+	padding-top : 12px;
+	padding-bottom : 12px;
+	text-align : center;
+	font-weight : bold;
+}
+
+.flex {
+	display : flex;
+	align-items : center;
+	flex-wrap : wrap;
+	justify-content : space-evenly;
+}
+
+.centre {
+	text-align : center;
+	vertical-align : middle;
+}
+
+.left {
+	text-align : left;
+}
+
+.top {
+	vertical-align : top;
+}
+
+.right {
+	text-align : right;
+}
+
+.bottom {
+	vertical-align : bottom;
+}
+
+.collapsible {
+	margin-top : 1em;
+}
+
+input[type='checkbox'] {
+	display : inline;
+	position : absolute;
+	visibility : hidden;
+	/* display : none; */
+}
+
+input[type='checkbox'] + label {
+	display : inline-block;
+	width : 100%;
+}
+
+.collapsible > input[type='checkbox'] + label::before {
+	content : '[+] ';
+}
+
+.collapsible > input:checked + label::before {
+	content : '[-] ';
+}
+
+.collapsible-content {
+	border-left : 2px dotted var(--foreground);
+	padding-left : 1em;
+	max-height : 0px;
+	overflow : hidden;
+}
+
+.toggle:checked + label + .collapsible-content {
+	max-height : 100%;
+}
+
+/*
+ * HIGHLIGHTING
+ */
+
+.err /* Error */ {
+	/* an actual error in the lexer */
+	color : var(--background-2);
+	background : rgb(255, 0, 0, 0.5);
+}
+
+.gr, /* Generic.Error */
+.gt  /* Generic.Traceback */ {
+	/* an error in the language */
+	border : 1px dotted #FF0000;
+}
+
+.c,  /* Comment */
+.c1, /* Comment.Single */
+.cm, /* Comment.Multiline */
+.cs, /* Comment.Special */
+.sd, /* Literal.String.Doc */
+.w   /* Text.Whitespace */ {
+	/* any kind of normal comment */
+	color : #080;
+	font-style : italic;
+}
+
+.cp /* Comment.Preproc */ {
+	/* pre-processor macros */
+	color : #705091;
+}
+
+.ge /* Generic.Emph */ {
+	/* markdown emphasis */
+	font-style: italic;
+}
+
+.gs /* Generic.Strong */ {
+	/* markdown bold */
+	font-weight: bold;
+}
+
+.gh /* Generic.Heading */ {
+	/* markdown heading */
+	color : #000080;
+	font-weight : bold;
+	text-decoration : underline;
+}
+
+.gu /* Generic.Subheading */ {
+	/* markdown subheading */
+	color: #800080;
+	font-weight: bold;
+}
+
+.gi /* Generic.Inserted */ {
+	/* diff addition */
+	color : #00A000;
+}
+
+.gd /* Generic.Deleted */ {
+	/* diff deletion */
+	color : #A00000;
+}
+
+.go, /* Generic.Output */
+.gp  /* Generic.Prompt */ {
+	/* no idea! */
+	color : #c65d09;
+	font-weight : bold;
+}
+
+.k,  /* Keyword */
+.kd, /* Keyword.Declaration */
+.kn, /* Keyword.Namespace */
+.kp, /* Keyword.Pseudo */
+.kr, /* Keyword.Reserved */
+.bp  /* Name.Builtin.Pseudo */ {
+	/* actual keywords */
+	color : #34347e;
+	font-weight : bold;
+}
+
+.kt /* Keyword.Type */ {
+	/* primitive data types */
+	color : #0078aa;
+}
+
+.nb /* Name.Builtin */ {
+	/* built-in function */
+	color : #d54a07;
+}
+
+.na, /* Name.Attribute */
+.nc, /* Name.Class */
+.nd, /* Name.Decorator */
+.ni, /* Name.Entity */
+.ne, /* Name.Exception */
+.nn  /* Name.Namespace */ {
+	/* types and other special keywords */
+	color : #7b7c26;
+}
+
+.nf /* Name.Function */ {
+	/* function call */
+	color : #808;
+}
+
+.nl, /* Name.Label */
+.nt  /* Name.Tag */ {
+	/* tags */
+	color : #002070;
+	font-weight : bold;
+}
+
+.n, /* Name */
+.nv, /* Name.Variable */
+.vc, /* Name.Variable.Class */
+.vg, /* Name.Variable.Global */
+.vi  /* Name.Variable.Instance */ {
+	/* user variables */
+	color : var(--foreground);
+	opacity : 0.9;
+}
+
+.vm /* Name.Variable.Magic */ {
+	/* macro names */
+	color : #ff2558;
+}
+
+.p, /* Punctuation */
+.o, /* Operator */
+.ow /* Operator.Word */ {
+	/* operators */
+	color : var(--foreground);
+}
+
+.kc, /* Keyword.Constant */
+.no  /* Name.Constant */ {
+	/* literals */
+	color : #5151cb;
+}
+
+.m,  /* Literal.Number */
+.mb, /* Literal.Number.Bin */
+.mh, /* Literal.Number.Hex */
+.mo, /* Literal.Number.Oct */
+.mf, /* Literal.Number.Float */
+.mi, /* Literal.Number.Integer */
+.il  /* Literal.Number.Integer.Long */ {
+	/* numeric literals */
+	color : #fa3232;
+}
+
+.s,  /* Literal.String */
+.sb, /* Literal.String.Backtick */
+.sc, /* Literal.String.Char */
+.s2, /* Literal.String.Double */
+.sx, /* Literal.String.Other */
+.sr, /* Literal.String.Regex */
+.s1, /* Literal.String.Single */
+.sh, /* Literal.String.Heredoc */
+.ss  /* Literal.String.Symbol */ {
+	/* string literals */
+	color : #b91010;
+}
+
+.se, /* Literal.String.Escape */
+.si  /* Literal.String.Interpol */ {
+	/* escape sequences and template literals */
+	color : #5151cb;
+}
+
+/*
+ * DARK MODE
+ */
+
+:root.dark-mode .c,  /* Comment */
+:root.dark-mode .c1, /* Comment.Single */
+:root.dark-mode .cm, /* Comment.Multiline */
+:root.dark-mode .cs, /* Comment.Special */
+:root.dark-mode .sd, /* Literal.String.Doc */
+:root.dark-mode .w   /* Text.Whitespace */ {
+	/* any kind of normal comment */
+	color : #416e41;
+	font-style : italic;
+}
+
+:root.dark-mode .cp /* Comment.Preproc */ {
+	/* pre-processor macros */
+	color : #7d5ba1;
+}
+
+:root.dark-mode .ge /* Generic.Emph */ {
+	/* markdown emphasis */
+	font-style: italic;
+}
+
+:root.dark-mode .gs /* Generic.Strong */ {
+	/* markdown bold */
+	font-weight: bold;
+}
+
+:root.dark-mode .gh /* Generic.Heading */ {
+	/* markdown heading */
+	color : #000080;
+	font-weight : bold;
+	text-decoration : underline;
+}
+
+:root.dark-mode .gu /* Generic.Subheading */ {
+	/* markdown subheading */
+	color: #800080;
+	font-weight: bold;
+}
+
+:root.dark-mode .gi /* Generic.Inserted */ {
+	/* diff addition */
+	color : #00A000;
+}
+
+:root.dark-mode .gd /* Generic.Deleted */ {
+	/* diff deletion */
+	color : #A00000;
+}
+
+:root.dark-mode .go, /* Generic.Output */
+:root.dark-mode .gp  /* Generic.Prompt */ {
+	/* no idea! */
+	color : #c65d09;
+	font-weight : bold;
+}
+
+:root.dark-mode .k,  /* Keyword */
+:root.dark-mode .kd, /* Keyword.Declaration */
+:root.dark-mode .kn, /* Keyword.Namespace */
+:root.dark-mode .kp, /* Keyword.Pseudo */
+:root.dark-mode .kr, /* Keyword.Reserved */
+:root.dark-mode .bp  /* Name.Builtin.Pseudo */ {
+	/* actual keywords */
+	color : #5c5c9b;
+	font-weight : bold;
+}
+
+:root.dark-mode .kt /* Keyword.Type */ {
+	/* primitive data types */
+	color : #0078aa;
+}
+
+:root.dark-mode .nb /* Name.Builtin */ {
+	/* built-in function */
+	color : #cf794f;
+}
+
+:root.dark-mode .na, /* Name.Attribute */
+:root.dark-mode .nc, /* Name.Class */
+:root.dark-mode .nd, /* Name.Decorator */
+:root.dark-mode .ni, /* Name.Entity */
+:root.dark-mode .ne, /* Name.Exception */
+:root.dark-mode .nn  /* Name.Namespace */ {
+	/* types and other special keywords */
+	color : #a78c0a;
+}
+
+:root.dark-mode .nf /* Name.Function */ {
+	/* function call */
+	color : #8f5c8f;
+}
+
+:root.dark-mode .nl, /* Name.Label */
+:root.dark-mode .nt  /* Name.Tag */ {
+	/* tags */
+	color : #002070;
+	font-weight : bold;
+}
+
+:root.dark-mode .n, /* Name */
+:root.dark-mode .nv, /* Name.Variable */
+:root.dark-mode .vc, /* Name.Variable.Class */
+:root.dark-mode .vg, /* Name.Variable.Global */
+:root.dark-mode .vi  /* Name.Variable.Instance */ {
+	/* user variables */
+	color : var(--foreground);
+	opacity : 0.9;
+}
+
+:root.dark-mode .vm /* Name.Variable.Magic */ {
+	/* macro names */
+	color : #a72555;
+}
+
+:root.dark-mode .p, /* Punctuation */
+:root.dark-mode .o, /* Operator */
+:root.dark-mode .ow /* Operator.Word */ {
+	/* operators */
+	color : var(--foreground);
+}
+
+:root.dark-mode .kc, /* Keyword.Constant */
+:root.dark-mode .no  /* Name.Constant */ {
+	/* literals */
+	color : #7a7eab;
+}
+
+:root.dark-mode .m,  /* Literal.Number */
+:root.dark-mode .mb, /* Literal.Number.Bin */
+:root.dark-mode .mh, /* Literal.Number.Hex */
+:root.dark-mode .mo, /* Literal.Number.Oct */
+:root.dark-mode .mf, /* Literal.Number.Float */
+:root.dark-mode .mi, /* Literal.Number.Integer */
+:root.dark-mode .il  /* Literal.Number.Integer.Long */ {
+	/* numeric literals */
+	color : #cf5e5e;
+}
+
+:root.dark-mode .s,  /* Literal.String */
+:root.dark-mode .sb, /* Literal.String.Backtick */
+:root.dark-mode .sc, /* Literal.String.Char */
+:root.dark-mode .s2, /* Literal.String.Double */
+:root.dark-mode .sx, /* Literal.String.Other */
+:root.dark-mode .sr, /* Literal.String.Regex */
+:root.dark-mode .s1, /* Literal.String.Single */
+:root.dark-mode .sh, /* Literal.String.Heredoc */
+:root.dark-mode .ss  /* Literal.String.Symbol */ {
+	/* string literals */
+	color : #c78888;
+}
+
+:root.dark-mode .se, /* Literal.String.Escape */
+:root.dark-mode .si  /* Literal.String.Interpol */ {
+	/* escape sequences and template literals */
+	color : #7a7eab;
+}

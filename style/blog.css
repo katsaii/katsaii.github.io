@@ -1,0 +1,22 @@
+#avatar-top {
+	width : 40em;
+	text-align : right;
+}
+
+table.post {
+	table-layout : auto;
+	width : 100%;
+}
+
+table.post td {
+	vertical-align : top;
+}
+
+table.post td.date {
+	white-space : nowrap;
+	padding-right : 1em;
+}
+
+.post * {
+	font-family : var(--font-mono);
+}

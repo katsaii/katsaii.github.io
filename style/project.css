@@ -1,0 +1,91 @@
+body {
+	overflow : scroll;
+	overflow-x : hidden;
+}
+
+label, label * {
+	font-family : var(--font-mono);
+	cursor : pointer;
+}
+
+#avatar-top {
+	width : 35em;
+}
+
+#avatar-bot {
+	width : 10em;
+}
+
+div.collapsible span[lang] {
+	transition: color 0.25s;
+}
+
+div.collapsible:hover span[lang=rust] {
+	color : #dea584;
+}
+
+div.collapsible:hover span[lang=llvm] {
+	color : #185619;
+}
+
+div.collapsible:hover span[lang="gamemaker language"] {
+	color : #71b417;
+}
+
+div.collapsible:hover span[lang="visual basic .net"],
+div.collapsible:hover span[lang="visual basic"],
+div.collapsible:hover span[lang="vbscript"],
+div.collapsible:hover span[lang="basic"],
+div.collapsible:hover span[lang="vba"] {
+	color : #945db7;
+}
+
+div.collapsible:hover span[lang="css"] {
+	color : #563d7c;
+}
+
+div.collapsible:hover span[lang="html"] {
+	color : #e34c26;
+}
+
+div.collapsible:hover span[lang="haskell"] {
+	color : #5e5086;
+}
+
+div.collapsible:hover span[lang="agda"] {
+	color : #315665;
+}
+
+div.collapsible:hover span[lang="javascript"] {
+	color : #ccc345;
+}
+
+div.collapsible:hover span[lang="python"] {
+	color : #3572a5;
+}
+
+div.collapsible:hover span[lang="ruby"] {
+	color : #c42d30;
+}
+
+div.collapsible:hover span[lang="go"] {
+	color : #00add8;
+}
+
+div.collapsible:hover span[lang="java"] {
+	color : #b07219;
+}
+
+div.collapsible:hover span[lang="r"] {
+	color : #198CE7;
+}
+
+div.collapsible:hover span[lang="c"],
+div.collapsible:hover span[lang="glsl"] {
+	color : #999999;
+}
+
+div.collapsible:hover span[lang="c++"] {
+	color : #f34b7d;
+}
+
